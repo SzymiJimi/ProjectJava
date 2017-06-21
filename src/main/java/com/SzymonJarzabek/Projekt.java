@@ -59,6 +59,8 @@ public class Projekt implements ActionListener{
             System.out.println("Błąd");
         }*/
 
+
+
         JScrollPane tableArea = Projekt.createTextArea(Item.table,1180,610);
         //tableArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         //tableArea.updateUI();
