@@ -170,6 +170,7 @@ public class Table  {
            qRows = result.getInt("rowcount");
         }
 
+
     }
     protected void getColumns() throws Exception {
         ResultSet result = statement.executeQuery(colCount);
