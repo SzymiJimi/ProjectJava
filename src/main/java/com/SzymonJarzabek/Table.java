@@ -138,6 +138,7 @@ public class Table  {
 
     protected void getOsoby() {
         try {
+            System.out.println("Zapytanie: "+sqlQueryAllData);
             ResultSet rs = statement.executeQuery(sqlQueryAllData);
             this.dataX = new Object[qRows][qColumns];//---------------------------
             for (int j = 0; j < qColumns; j++)  //---------------------------------------
@@ -168,13 +169,16 @@ public class Table  {
        while (result.next()){
            qRows = result.getInt("rowcount");
         }
+        System.out.println("Zapytanie o Count rows: "+qRows);
 
     }
     protected void getColumns() throws Exception {
+        System.out.println("Zapytanie do kolumn: "+colCount);
         ResultSet result = statement.executeQuery(colCount);
         result.next();
         qColumns=result.getInt("count(*)");
         colNames=new String[qColumns];
+        System.out.println("Ilosc kolumn: "+qColumns);
     }
     public static Statement connectToDB () throws Exception
     {

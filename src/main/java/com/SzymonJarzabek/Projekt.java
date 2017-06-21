@@ -53,12 +53,16 @@ public class Projekt implements ActionListener{
     {
         panel.updateUI();
         Table Item=new Table(name);
-        try {
+        /*try {
             panel.remove(1);
         }catch(Exception e){
             System.out.println("Błąd");
-        }
-        panel.add(Item.table);
+        }*/
+
+        JScrollPane tableArea = Projekt.createTextArea(Item.table,1180,610);
+        //tableArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        //tableArea.updateUI();
+        panel.add(tableArea);
         panel.updateUI();
     }
     public final static MouseListener buttonMouseListener = new MouseAdapter() {

@@ -305,7 +305,9 @@ public class HandlerClass implements ActionListener{
                         //Sprawdzamy jaki jest index ostatnio stworzonej tabeli aby można dodać akcje do przycisku.
                         Projekt.addCloseButtonToPane(name);
                         index = Projekt.tabbedPanel.indexOfTab(name);
-                       // Table=new Workers()
+                        Projekt.createTable("PRACOWNICY", workersPanel);
+                        //Table workers=new Table("Pracownicy");
+
                         Projekt.tabbedPanel.setSelectedIndex(index);
 
                     } catch (Exception e) {
