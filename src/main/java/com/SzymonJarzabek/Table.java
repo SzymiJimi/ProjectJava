@@ -2,13 +2,14 @@ package com.SzymonJarzabek;
 
 import javax.swing.*;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 
 
 /**
  * Created by Szymon on 2017-05-04.
  */
-public class Table  {
+public class Table {
     static Statement statement;
     String colNames[],sqlQueryAllData;
     String rowCount= "SELECT COUNT(*) AS rowcount FROM ";
@@ -111,7 +112,11 @@ public class Table  {
             System.out.println("Blad w sql");
         }
     }
-    protected void createSQL(String name){
+
+
+
+
+protected void createSQL(String name){
         sqlQueryAllData="Select ";
         for(int i=0;i<colNames.length;i++) {
             if(i!=colNames.length-1){
@@ -191,18 +196,29 @@ public class Table  {
         return statement;
     }
 
-    public void setWidthColumn( int width, int index)
+
+    public void setWidthColumn( int width, int index, Object [][] data,String columnNames[] )
     {
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.getColumnModel().getColumn(index).setMinWidth(width);
         table.getColumnModel().getColumn(index).setMaxWidth(width);
+        DefaultTableModel tableModel = new DefaultTableModel(data, columnNames) {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+
+                //System.out.println("Zaznaczono: "+row+" wiersz i "+column+" kolumne!");
+                return false;
+            }
+        };
+        table.setModel(tableModel);
     }
 
     protected void creatDataTable(Statement stmt)
     {
         table = new JTable(this.dataX, colNames);
         for(int i=0;i<qColumns;i++){    //=--------------------------
-            setWidthColumn(100,i);
+            setWidthColumn(100,i,this.dataX,this.colNames);
         }
 
     }

@@ -49,7 +49,7 @@ public class Projekt implements ActionListener{
     //static JComponent panel3;
     // static JButton btnClose = new JButton("x");
     //static JButton btnClose1 = new JButton("x");
-    public static void createTable(String name, JComponent panel) throws Exception
+    public static JTable createTable(String name, JComponent panel) throws Exception
     {
         panel.updateUI();
         Table Item=new Table(name);
@@ -61,15 +61,18 @@ public class Projekt implements ActionListener{
 
 
 
-        JScrollPane tableArea = Projekt.createTextArea(Item.table,1180,610);
+        JScrollPane tableArea = Projekt.createTextArea(Item.table,1180,580);
         //tableArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         //tableArea.updateUI();
         panel.add(tableArea);
         panel.updateUI();
+        return Item.table;
+
     }
     public final static MouseListener buttonMouseListener = new MouseAdapter() {
         public void mouseEntered(MouseEvent e) {
             Component component = e.getComponent();
+            System.out.println("w przycisku close!");
             if (component instanceof AbstractButton) {
                 AbstractButton button = (AbstractButton) component;
                 button.setBorderPainted(true);
@@ -293,7 +296,9 @@ public class Projekt implements ActionListener{
         HandlerClass handlerAdd=new HandlerClass(butAdd);
         butAdd.addActionListener(handlerAdd);
 
-
+        butStan.setActionCommand("condition");
+        HandlerClass handlerCondition=new HandlerClass(butStan);
+        butStan.addActionListener(handlerCondition);
 
 
         JLabel logInfo=new JLabel("Zalogowano jako:");
@@ -308,7 +313,7 @@ public class Projekt implements ActionListener{
         layout.fill = GridBagConstraints.HORIZONTAL;
         layout.weightx = 0.5;
         //  layout.anchor=GridBagConstraints.PAGE_END;
-        layout.insets = new Insets(40,0,0,10);
+        layout.insets = new Insets(100,0,0,10);
         layout.gridx = 0;
         layout.gridwidth = 2;
         layout.gridy = 1;
