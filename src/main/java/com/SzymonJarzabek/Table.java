@@ -87,7 +87,7 @@ public class Table {
                     break;
             }
         }
-    protected void getColNames () throws Exception
+    protected  void getColNames () throws Exception
     {
         ResultSet rs = statement.executeQuery(sqlColNames);
         int i=0;

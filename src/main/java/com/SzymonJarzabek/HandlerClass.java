@@ -29,6 +29,7 @@ import javax.swing.JPanel;
  */
 public class HandlerClass implements ActionListener{
 
+    int row_id=-1;
     JButton button;
     Table nTable;
     String name;
@@ -67,6 +68,18 @@ public class HandlerClass implements ActionListener{
         this.Auto=Samochod;
     }
 
+    public HandlerClass(Car Samochod,int row_id )
+    {
+        this.Auto=Samochod;
+        this.row_id=row_id;
+    }
+
+    public HandlerClass(JButton button, int row_id)
+    {
+        this.button=button;
+        button=this.button;
+        this.row_id=row_id;
+    }
 
 
     public HandlerClass(String tabName)
@@ -160,7 +173,7 @@ public class HandlerClass implements ActionListener{
         return comboBox;
     }
 
-    private void createAddCarPanel(JComponent panel)
+    private void createAddCarPanel(JComponent panel, int row_id)
     {
         JPanel mainPanel=new JPanel();
         mainPanel.setPreferredSize(new Dimension(1180,600));
@@ -181,7 +194,7 @@ public class HandlerClass implements ActionListener{
         Samochod.vin=createTextField("VIN: ",20,50, 30,mainPanel, Color.cyan, layout,0,3,0,0,0,0);
         Samochod.przebieg=createTextField("Przebieg: ",20,50, 30,mainPanel, Color.cyan, layout,0,4,0,0,0,0);
         Samochod.moc=createTextField("Moc: ",20,50, 30,mainPanel, Color.cyan, layout,0,5,0,0,0,0);
-        String engineTypes[]={"Diesel", "Benzyna", "Hubryda", "Elektryczny", "Benzyna+LPG"};
+        String engineTypes[]={"Diesel", "Benzyna", "Hybrydowy", "Elektryczny", "Benzyna+LPG"};
         Samochod.typSilnika=createComboBox("Rodzaj paliwa: ",engineTypes,mainPanel, layout,0,6,0,0,0,0);
         String capacity[]={"0.8","0.9","1.0","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2.0","2.1","2.2","2.3","2.4","2.5","2.6","2.7","2.8","2.9","3.0","3.1","3.2","3.3","3.4","3.5","3.6","3.7","3.8","3.9","4.0","4.1","4.2","4.3","4.4","4.5","4.6","4.7","4.8","4.9","5.0"};
         //Samochod.pojemnosc=createTextField("Pojemność: ",20,50, 30,mainPanel, Color.cyan, layout,0,7,0,0,0,0);
@@ -256,10 +269,15 @@ public class HandlerClass implements ActionListener{
         JButton accept=new JButton("Akceptuj");
         Projekt.setLayoutAdd(mainPanel,layout,2,17,-20,-150,0,0,accept,1);
 
-        accept.setActionCommand("acceptAddCar");
-        HandlerClass handlerAdd=new HandlerClass(Samochod);
-        accept.addActionListener(handlerAdd);
-
+        if(row_id==-1) {
+            accept.setActionCommand("acceptAddCar");
+            HandlerClass handlerAdd = new HandlerClass(Samochod);
+            accept.addActionListener(handlerAdd);
+        }else {
+            accept.setActionCommand("acceptAddCar");
+            HandlerClass handlerAdd = new HandlerClass(Samochod, row_id);
+            accept.addActionListener(handlerAdd);
+        }
 
         panel.add(modifyArea);
         panel.updateUI();
@@ -344,52 +362,7 @@ public class HandlerClass implements ActionListener{
             } else {
                 JOptionPane.showMessageDialog(null, "Zaznaczono kolumne w której nie znajduje sie ID", "Błąd!", JOptionPane.INFORMATION_MESSAGE);
             }
-        } else if (event.getActionCommand().equals("Modify")) {
-            int index;
-            String name = "Modyfikacja";
-            int x = nTable.table.getSelectedRow();
-            int y = nTable.table.getSelectedColumn();
-            if (Projekt.tabbedPanel.indexOfTab(name) == -1) {
-                System.out.println("Jestem: ");
-                //wykona się jeśli zaznaczono pierwszą kolumne
-                if (y == 0) {
-                    try {
-                        //Wykorzystujemy swoją klase do stworzenia panelu
-                        JComponent modifypanel = Shelf.createShelf(Projekt.tabbedPanel, name, "", "Modyfikacja wiersza", "ikona1.gif");
-                        Projekt.tabbedPanel.updateUI();
-                        //Sprawdzamy jaki jest index ostatnio stworzonej tabeli aby można dodać akcje do przycisku.
-                        index = Projekt.tabbedPanel.indexOfTab(name);
-                        //System.out.println("Index wynosi: "+index);
-                        // System.out.println("PrefIDX wynosi: "+preferedIdx);
-                        JPanel pnlTab = new JPanel(new GridBagLayout());
-                        pnlTab.setOpaque(false);
-                        JLabel lblTitle = new JLabel(name);
-                        //Obsługa przycisku do zamykania
-                        JButton btnClose1 = new JButton("x");
-                        setCloseButton(btnClose1);
-                        //koniec obłsugi przycisku
-                        GridBagConstraints gbc = new GridBagConstraints();
-                        gbc.gridx = 0;
-                        gbc.gridy = 0;
-                        gbc.weightx = 0.5;
-                        pnlTab.add(lblTitle, gbc);
-                        gbc.gridx += 3;
-                        gbc.weightx = 0;
-                        pnlTab.add(btnClose1, gbc);
-                        Projekt.tabbedPanel.setTabComponentAt(index, pnlTab);
-                        HandlerClass handlerClose = new HandlerClass(name);
-                        btnClose1.addActionListener(handlerClose);
-                        Projekt.tabbedPanel.setSelectedIndex(index);
-                        System.out.println("Czesc");
-                    } catch (Exception e) {
-                        System.out.println("Błąd w fokusowaniu...");
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Zaznaczono kolumne w której nie znajduje sie ID", "Błąd!", JOptionPane.INFORMATION_MESSAGE);
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Nie zakonczono rozpoczetej modyfikacji!", "Błąd!", JOptionPane.INFORMATION_MESSAGE);
-            }
+
         } else if (event.getActionCommand().equals("removeTab")) {
             int index = Projekt.tabbedPanel.indexOfTab(getTabName());
            // System.out.println("Index tabeli usuwanej: " + index);
@@ -443,7 +416,7 @@ public class HandlerClass implements ActionListener{
                     // Table=new Workers()
                     Projekt.tabbedPanel.setSelectedIndex(index);
                     //this.button.setEnabled(false);
-                    createAddCarPanel(addCarPanel);
+                    createAddCarPanel(addCarPanel, -1);
 
                 } catch (Exception e) {
                     System.out.println("Błąd w fokusowaniu...");
@@ -511,22 +484,36 @@ public class HandlerClass implements ActionListener{
             int swXenonBool=saveBool(Auto.swXenon.isSelected());
             int swDzienBool=saveBool(Auto.swDzien.isSelected());
 
-
+            String sqlQueryWyp;
+            String sqlQueryOpis;
+            String sqlQuerySam;
             //int rokInt=Integer.parseInt(rokTxt);
 
+            if(row_id==-1) {
+                sqlQueryWyp = "Insert into WYPOSAZENIE VALUES(wypseq.nextval, 10, " + absBool + ", " + espBool + ", " + wspKierBool + ", " + bluetoothBool + ", " + czZmierzchuBool + ", " + czParkowaniaBool + ", " + czDeszczuBool + ", " + elLusterkaBool + ", " + elSzybyPBool + ", " + elSzybyTBool + ", " + podgrzLustBokBool + ", " + podgrzSiedzPBool + ", ";
+                sqlQueryWyp = sqlQueryWyp + podgrzSiedzTBool + ", " + podgrzKierBool + ", " + immobilizerBool + ", " + alarmBool + ", " + centralnyZamBool + ", " + pilotBool + ", " + mp3Bool + ", " + gnAuxBool + ", " + radioFabrBool + ", " + cdBool + ", " + kompPoklBool + ", " + gniazdo12VBool + ", " + tempomatBool + ", " + aktywTempBool + ", ";
+                sqlQueryWyp = sqlQueryWyp + lineAsistBool + ", " + kurtynyPowBool + ", " + isofixBool + ", " + ciemneSzyby + ", " + alufelgiBool + ", " + relingiBool + ", " + swLEDBool + ", " + swXenonBool + ", " + swDzienBool + ")";
 
-            String sqlQueryWyp="Insert into WYPOSAZENIE VALUES(wypseq.nextval, 10, "+absBool+", "+espBool+", "+wspKierBool+", "+bluetoothBool+", "+czZmierzchuBool+", "+czParkowaniaBool+", "+ czDeszczuBool+", "+elLusterkaBool +", "+elSzybyPBool +", "+ elSzybyTBool+", "+ podgrzLustBokBool+", "+podgrzSiedzPBool +", ";
-            sqlQueryWyp=sqlQueryWyp+podgrzSiedzTBool+", "+ podgrzKierBool+", "+ immobilizerBool+", "+alarmBool +", "+centralnyZamBool +", "+ pilotBool+", "+mp3Bool +", "+ gnAuxBool+", "+ radioFabrBool+", "+cdBool +", "+ kompPoklBool+", "+gniazdo12VBool +", "+ tempomatBool+", "+aktywTempBool +", ";
-            sqlQueryWyp=sqlQueryWyp+lineAsistBool+", "+kurtynyPowBool +", "+isofixBool +", "+ciemneSzyby +", "+ alufelgiBool+", "+relingiBool +", "+swLEDBool +", "+ swXenonBool+", "+ swDzienBool+")";
+                sqlQueryOpis = "Insert into OPIS VALUES(opisseq.nextval, '" + skrzyniaTxt + "', '" + stanTxt + "', '" + nadwozieTxt + "', '" + krajPochTxt + "', " + serwisTxt + ", '" + opisTxt + "')";
 
-            String sqlQueryOpis="Insert into OPIS VALUES(opisseq.nextval, '"+skrzyniaTxt+"', '"+stanTxt+"', '"+nadwozieTxt+"', '"+krajPochTxt+"', "+serwisTxt+", '"+opisTxt+"')";
+                sqlQuerySam = "Insert into SAMOCHODY VALUES(samseq.nextval, '" + markaTxt + "', '" + modelTxt + "', " + rokTxt + ", '" + vinTxt + "', " + przebiegTxt + ", " + mocTxt + ", '" + typSilnikaTxt + "', " + pojemnoscTxt + ",wypseq.currval,opisseq.currval,10)";
 
-            String sqlQuerySam="Insert into SAMOCHODY VALUES(samseq.nextval, '"+markaTxt+"', '"+modelTxt +"', "+rokTxt +", '"+ vinTxt+"', "+ przebiegTxt +", "+ mocTxt+", '"+ typSilnikaTxt+"', "+pojemnoscTxt +",wypseq.currval,opisseq.currval,10)";
+                System.out.println("Zapytanie z dodawania wyposarzenia: " + sqlQueryWyp);
+                System.out.println("Zapytanie z dodawania opisu: " + sqlQueryOpis);
+                System.out.println("Zapytanie z dodawania samochodu: " + sqlQuerySam);
+            }else{
+                sqlQueryWyp = "UPDATE WYPOSAZENIE SET("+row_id+", 10, " + absBool + ", " + espBool + ", " + wspKierBool + ", " + bluetoothBool + ", " + czZmierzchuBool + ", " + czParkowaniaBool + ", " + czDeszczuBool + ", " + elLusterkaBool + ", " + elSzybyPBool + ", " + elSzybyTBool + ", " + podgrzLustBokBool + ", " + podgrzSiedzPBool + ", ";
+                sqlQueryWyp = sqlQueryWyp + podgrzSiedzTBool + ", " + podgrzKierBool + ", " + immobilizerBool + ", " + alarmBool + ", " + centralnyZamBool + ", " + pilotBool + ", " + mp3Bool + ", " + gnAuxBool + ", " + radioFabrBool + ", " + cdBool + ", " + kompPoklBool + ", " + gniazdo12VBool + ", " + tempomatBool + ", " + aktywTempBool + ", ";
+                sqlQueryWyp = sqlQueryWyp + lineAsistBool + ", " + kurtynyPowBool + ", " + isofixBool + ", " + ciemneSzyby + ", " + alufelgiBool + ", " + relingiBool + ", " + swLEDBool + ", " + swXenonBool + ", " + swDzienBool + ") WHERE WYPOSAZENIE_ID="+row_id;
 
-            System.out.println("Zapytanie z dodawania wyposarzenia: "+sqlQueryWyp);
-            System.out.println("Zapytanie z dodawania opisu: "+sqlQueryOpis);
-            System.out.println("Zapytanie z dodawania samochodu: "+sqlQuerySam);
+                sqlQueryOpis = "UPDATE OPIS SET("+row_id + skrzyniaTxt + "', '" + stanTxt + "', '" + nadwozieTxt + "', '" + krajPochTxt + "', " + serwisTxt + ", '" + opisTxt + "') WHERE OPIS_ID="+row_id;
 
+                sqlQuerySam =  "UPDATE SAMOCHODY SET("+row_id + markaTxt + "', '" + modelTxt + "', " + rokTxt + ", '" + vinTxt + "', " + przebiegTxt + ", " + mocTxt + ", '" + typSilnikaTxt + "', " + pojemnoscTxt + ", "+row_id+", "+row_id+", 10) WHERE SAMOCHOD_ID= "+row_id;
+
+                System.out.println("Zapytanie z modyfikowania wyposarzenia: " + sqlQueryWyp);
+                System.out.println("Zapytanie z modyfikowania opisu: " + sqlQueryOpis);
+                System.out.println("Zapytanie z modyfikowania samochodu: " + sqlQuerySam);
+            }
             int index;
 
             try {

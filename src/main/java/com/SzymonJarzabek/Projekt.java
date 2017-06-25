@@ -182,6 +182,19 @@ public class Projekt implements ActionListener{
         panel.add(component, layout);
     }
 
+    protected static void setLayoutAdd( JComponent panel, GridBagConstraints layout, int x, int y, int top, int left, int bottom, int right, JComponent component, int weigthy, int widthy, int r)
+    {
+        layout.fill = GridBagConstraints.NONE;
+        layout.ipady=0;
+        layout.weighty=weigthy;
+        layout.weightx = 0.5;
+        layout.gridheight=widthy;
+        layout.insets = new Insets(top,left,bottom,right);
+        layout.gridx = x;
+        layout.gridy = y;
+        panel.add(component, layout);
+    }
+
     protected static JScrollPane createTextArea(JComponent textPane, int sizex, int sizey)
     {
 
