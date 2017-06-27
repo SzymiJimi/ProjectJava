@@ -29,6 +29,7 @@ public class Person {
     public String getFirstName() {
         return firstName.get();
     }
+
     public void setFirstName(String fName) {
         firstName.set(fName);
     }
@@ -36,6 +37,7 @@ public class Person {
     public String getLastName() {
         return lastName.get();
     }
+
     public void setLastName(String fName) {
         lastName.set(fName);
     }
@@ -43,6 +45,7 @@ public class Person {
     public String getEmail() {
         return email.get();
     }
+
     public void setEmail(String fName) {
         email.set(fName);
     }

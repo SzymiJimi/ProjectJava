@@ -453,7 +453,7 @@ public class MouseHandler implements MouseListener{
         getOpis(descrips, row);
         getCar(cars, row);
 
-        createPanel(equips,descrips,cars, row);
+        createPanel(equips,descrips,cars, row, rowek);
        // System.out.println("Dana z opisu(skrzynia): "+descrips[0].data+" ("+descrips[0].name+")");
     }
 
@@ -477,7 +477,7 @@ public class MouseHandler implements MouseListener{
         Projekt.setLayoutAdd(panel,layout,gridx,gridy,0,0,0,0,label,1);
     }
 
-    public void showInfo(Equipment equips[], Equipment descrips[], Equipment cars[], JComponent panel, int rowID)
+    public void showInfo(Equipment equips[], Equipment descrips[], Equipment cars[], JComponent panel, int rowID, int stateID)
     {
         JPanel mainPanel=new JPanel();
         //JScrollPane editorScrollPane = new JScrollPane(mainPanel);
@@ -493,6 +493,8 @@ public class MouseHandler implements MouseListener{
 
         JButton modify=new JButton("Modyfikuj");
         JButton cancel=new JButton("Powrót");
+        JButton sell=new JButton("Sprzedaj");
+
 
         for(int k=0;k<8;k++)
         {
@@ -544,16 +546,29 @@ public class MouseHandler implements MouseListener{
         Projekt.setLayoutAdd(mainPanel,layout,counterX,counterY,0,0,0,0,modify,1);
         counterY+=1;
         Projekt.setLayoutAdd(mainPanel,layout,counterX,counterY,0,0,0,0,cancel,1);
+        counterY+=1;
+        Projekt.setLayoutAdd(mainPanel,layout,counterX,counterY,0,0,0,0,sell,1);
 
         modify.setActionCommand("addCar");
         HandlerClass handlerCondition=new HandlerClass(modify, rowID);
         modify.addActionListener(handlerCondition);
 
+        cancel.setActionCommand("cancelModify");
+        HandlerClass handlerCancel=new HandlerClass(cancel);
+        cancel.addActionListener(handlerCancel);
+
+
+        System.out.println("ROW ID w mouse handler : "+rowID);
+        sell.setActionCommand("sellCar");
+        HandlerClass sellHandler=new HandlerClass(rowID, stateID);
+        sell.addActionListener(sellHandler);
+
+
         panel.add(editorScrollPane);
         panel.updateUI();
     }
 
-    public void createPanel(Equipment equips[], Equipment descrips[], Equipment cars[], int rowID)
+    public void createPanel(Equipment equips[], Equipment descrips[], Equipment cars[], int rowID, int stateID )
     {
         int index;
         String name = "Modyfikacja auta";
@@ -571,7 +586,7 @@ public class MouseHandler implements MouseListener{
                 //createAddCarPanel(modifyPanel);
                 JPanel panel=new JPanel();
                 //modifyPanel.add(panel);
-                showInfo(equips,descrips,cars, modifyPanel, rowID);
+                showInfo(equips,descrips,cars, modifyPanel, rowID, stateID);
 
             } catch (Exception a) {
                 System.out.println("Błąd w fokusowaniu...");

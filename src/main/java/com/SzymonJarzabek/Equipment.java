@@ -12,20 +12,26 @@ public class Equipment {
     String data;
     int workID;
 
-    public Equipment()
-    {
+    public JTextField clientName;
+    public JTextField clientSurname;
+    public JTextField workerID;
+    public JTextField price;
+    public JTextField clientPESEL;
+    public JComboBox sex;
+
+
+    public Equipment() {
 
     }
 
-    public Equipment(String name,boolean check )
-    {
-        this.name=name;
-        this.check=check;
+    public Equipment(String name, boolean check) {
+        this.name = name;
+        this.check = check;
     }
-    public Equipment(String name,String data )
-    {
-        this.name=name;
-        this.data=data;
+
+    public Equipment(String name, String data) {
+        this.name = name;
+        this.data = data;
     }
 
 }

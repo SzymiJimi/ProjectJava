@@ -21,6 +21,7 @@ import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.concurrent.atomic.AtomicBoolean;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -29,6 +30,9 @@ import javax.swing.JPanel;
  */
 public class HandlerClass implements ActionListener{
 
+    int rowAdd;
+    int stateRowID;
+    Car AutoAdd;
     int row_id=-1;
     JButton button;
     Table nTable;
@@ -38,6 +42,7 @@ public class HandlerClass implements ActionListener{
     private String tabName;
     JTextField textArea;
     Car Auto;
+    Equipment sellData;
 
     //-----------------Konstruktory----------------------------------------
     public HandlerClass(Table table, JTextField pole, String name, JComponent panel)
@@ -79,6 +84,27 @@ public class HandlerClass implements ActionListener{
         this.button=button;
         button=this.button;
         this.row_id=row_id;
+    }
+
+    public HandlerClass(int row, Car Auto)
+    {
+        this.rowAdd=row;
+        this.AutoAdd=Auto;
+    }
+
+    public HandlerClass(int row, int stateID)
+    {
+        this.rowAdd=row;
+        this.stateRowID=stateID;
+        System.out.println("ID stanu w konstruktorze: "+rowAdd);
+    }
+
+    public HandlerClass(Equipment sellData, int stateID, int carRow)
+    {
+        this.sellData=sellData;
+        sellData=this.sellData;
+        this.stateRowID=stateID;
+        this.rowAdd=carRow;
     }
 
 
@@ -285,15 +311,7 @@ public class HandlerClass implements ActionListener{
 
     }
 
-    protected int saveBool(boolean value){
 
-        int variable=0;
-        if(value)
-        {
-            variable=1;
-        }
-        return variable;
-    }
     private void setTable(Table table) throws Exception
     {
         this.nTable=new Table(name);
@@ -416,7 +434,7 @@ public class HandlerClass implements ActionListener{
                     // Table=new Workers()
                     Projekt.tabbedPanel.setSelectedIndex(index);
                     //this.button.setEnabled(false);
-                    createAddCarPanel(addCarPanel, -1);
+                    createAddCarPanel(addCarPanel, row_id);
 
                 } catch (Exception e) {
                     System.out.println("Błąd w fokusowaniu...");
@@ -428,118 +446,37 @@ public class HandlerClass implements ActionListener{
 
         }else if(event.getActionCommand().equals("acceptAddCar")){
 
-            System.out.println("Wcisnieto!");
-            String markaTxt;
-            markaTxt=Auto.marka.getText();
-
-            System.out.println("Marka: "+markaTxt);
-
-            String modelTxt=Auto.model.getText();
-            String rokTxt=(String)Auto.rok.getSelectedItem();
-            String vinTxt=Auto.vin.getText();
-            String przebiegTxt=Auto.przebieg.getText();
-            String mocTxt=Auto.moc.getText();
-            String typSilnikaTxt=(String)Auto.typSilnika.getSelectedItem();
-            String pojemnoscTxt=(String)Auto.pojemnosc.getSelectedItem();
-            String skrzyniaTxt=(String)Auto.skrzynia.getSelectedItem();
-            String stanTxt=(String)Auto.stan.getSelectedItem();
-            String nadwozieTxt=(String)Auto.nadwozie.getSelectedItem();
-            String krajPochTxt=(String)Auto.krajPoch.getSelectedItem();
-            int serwisTxt=saveBool(Auto.serwis.isSelected());
-            String opisTxt=Auto.opis.getText();
-
-            int absBool=saveBool(Auto.abs.isSelected());
-            int espBool=saveBool(Auto.esp.isSelected());
-            int wspKierBool=saveBool(Auto.wspKier.isSelected());
-            int bluetoothBool=saveBool(Auto.bluetooth.isSelected());
-            int czZmierzchuBool=saveBool(Auto.czZmierzchu.isSelected());
-            int czParkowaniaBool=saveBool(Auto.czParkowania.isSelected());
-            int czDeszczuBool=saveBool(Auto.czDeszczu.isSelected());
-            int elLusterkaBool=saveBool(Auto.elLusterka.isSelected());
-            int elSzybyPBool=saveBool(Auto.elSzybyP.isSelected());
-            int elSzybyTBool=saveBool(Auto.elSzybyT.isSelected());
-            int podgrzLustBokBool=saveBool(Auto.podgrzLustBok.isSelected());
-            int podgrzSiedzPBool=saveBool(Auto.podgrzSiedzP.isSelected());
-            int podgrzSiedzTBool=saveBool(Auto.podgrzSiedzT.isSelected());
-            int podgrzKierBool=saveBool(Auto.podgrzKier.isSelected());
-            int immobilizerBool=saveBool(Auto.immobilizer.isSelected());
-            int alarmBool=saveBool(Auto.alarm.isSelected());
-            int centralnyZamBool=saveBool(Auto.centralnyZam.isSelected());
-            int pilotBool=saveBool(Auto.pilot.isSelected());
-            int mp3Bool=saveBool(Auto.mp3.isSelected());
-            int gnAuxBool=saveBool(Auto.gnAux.isSelected());
-            int radioFabrBool=saveBool(Auto.radioFabr.isSelected());
-            int cdBool=saveBool(Auto.cd.isSelected());
-            int kompPoklBool=saveBool(Auto.kompPokl.isSelected());
-            int gniazdo12VBool=saveBool(Auto.gniazdo12V.isSelected());
-            int tempomatBool=saveBool(Auto.tempomat.isSelected());
-            int aktywTempBool=saveBool(Auto.aktywTemp.isSelected());
-            int lineAsistBool=saveBool(Auto.lineAsist.isSelected());
-            int kurtynyPowBool=saveBool(Auto.kurtynyPow.isSelected());
-            int isofixBool=saveBool(Auto.isofix.isSelected());
-            int ciemneSzyby=saveBool(Auto.ciemneSzyby.isSelected());
-            int alufelgiBool=saveBool(Auto.alufelgi.isSelected());
-            int relingiBool=saveBool(Auto.relingi.isSelected());
-            int swLEDBool=saveBool(Auto.swLED.isSelected());
-            int swXenonBool=saveBool(Auto.swXenon.isSelected());
-            int swDzienBool=saveBool(Auto.swDzien.isSelected());
-
-            String sqlQueryWyp;
-            String sqlQueryOpis;
-            String sqlQuerySam;
-            //int rokInt=Integer.parseInt(rokTxt);
+            System.out.println("Wcisnieto! row id wynosi: "+row_id);
 
             if(row_id==-1) {
-                sqlQueryWyp = "Insert into WYPOSAZENIE VALUES(wypseq.nextval, 10, " + absBool + ", " + espBool + ", " + wspKierBool + ", " + bluetoothBool + ", " + czZmierzchuBool + ", " + czParkowaniaBool + ", " + czDeszczuBool + ", " + elLusterkaBool + ", " + elSzybyPBool + ", " + elSzybyTBool + ", " + podgrzLustBokBool + ", " + podgrzSiedzPBool + ", ";
-                sqlQueryWyp = sqlQueryWyp + podgrzSiedzTBool + ", " + podgrzKierBool + ", " + immobilizerBool + ", " + alarmBool + ", " + centralnyZamBool + ", " + pilotBool + ", " + mp3Bool + ", " + gnAuxBool + ", " + radioFabrBool + ", " + cdBool + ", " + kompPoklBool + ", " + gniazdo12VBool + ", " + tempomatBool + ", " + aktywTempBool + ", ";
-                sqlQueryWyp = sqlQueryWyp + lineAsistBool + ", " + kurtynyPowBool + ", " + isofixBool + ", " + ciemneSzyby + ", " + alufelgiBool + ", " + relingiBool + ", " + swLEDBool + ", " + swXenonBool + ", " + swDzienBool + ")";
+                String name = "Dodatkowe parametry auta";
+                //int rokInt=Integer.parseInt(rokTxt);
 
-                sqlQueryOpis = "Insert into OPIS VALUES(opisseq.nextval, '" + skrzyniaTxt + "', '" + stanTxt + "', '" + nadwozieTxt + "', '" + krajPochTxt + "', " + serwisTxt + ", '" + opisTxt + "')";
 
-                sqlQuerySam = "Insert into SAMOCHODY VALUES(samseq.nextval, '" + markaTxt + "', '" + modelTxt + "', " + rokTxt + ", '" + vinTxt + "', " + przebiegTxt + ", " + mocTxt + ", '" + typSilnikaTxt + "', " + pojemnoscTxt + ",wypseq.currval,opisseq.currval,10)";
-
-                System.out.println("Zapytanie z dodawania wyposarzenia: " + sqlQueryWyp);
-                System.out.println("Zapytanie z dodawania opisu: " + sqlQueryOpis);
-                System.out.println("Zapytanie z dodawania samochodu: " + sqlQuerySam);
-            }else{
-                sqlQueryWyp = "UPDATE WYPOSAZENIE SET("+row_id+", 10, " + absBool + ", " + espBool + ", " + wspKierBool + ", " + bluetoothBool + ", " + czZmierzchuBool + ", " + czParkowaniaBool + ", " + czDeszczuBool + ", " + elLusterkaBool + ", " + elSzybyPBool + ", " + elSzybyTBool + ", " + podgrzLustBokBool + ", " + podgrzSiedzPBool + ", ";
-                sqlQueryWyp = sqlQueryWyp + podgrzSiedzTBool + ", " + podgrzKierBool + ", " + immobilizerBool + ", " + alarmBool + ", " + centralnyZamBool + ", " + pilotBool + ", " + mp3Bool + ", " + gnAuxBool + ", " + radioFabrBool + ", " + cdBool + ", " + kompPoklBool + ", " + gniazdo12VBool + ", " + tempomatBool + ", " + aktywTempBool + ", ";
-                sqlQueryWyp = sqlQueryWyp + lineAsistBool + ", " + kurtynyPowBool + ", " + isofixBool + ", " + ciemneSzyby + ", " + alufelgiBool + ", " + relingiBool + ", " + swLEDBool + ", " + swXenonBool + ", " + swDzienBool + ") WHERE WYPOSAZENIE_ID="+row_id;
-
-                sqlQueryOpis = "UPDATE OPIS SET("+row_id + skrzyniaTxt + "', '" + stanTxt + "', '" + nadwozieTxt + "', '" + krajPochTxt + "', " + serwisTxt + ", '" + opisTxt + "') WHERE OPIS_ID="+row_id;
-
-                sqlQuerySam =  "UPDATE SAMOCHODY SET("+row_id + markaTxt + "', '" + modelTxt + "', " + rokTxt + ", '" + vinTxt + "', " + przebiegTxt + ", " + mocTxt + ", '" + typSilnikaTxt + "', " + pojemnoscTxt + ", "+row_id+", "+row_id+", 10) WHERE SAMOCHOD_ID= "+row_id;
-
-                System.out.println("Zapytanie z modyfikowania wyposarzenia: " + sqlQueryWyp);
-                System.out.println("Zapytanie z modyfikowania opisu: " + sqlQueryOpis);
-                System.out.println("Zapytanie z modyfikowania samochodu: " + sqlQuerySam);
-            }
-            int index;
-
-            try {
-                Table.statement.executeQuery(sqlQueryWyp);
-                Table.statement.executeQuery("COMMIT");
-                Table.statement.executeQuery(sqlQueryOpis);
-                Table.statement.executeQuery("COMMIT");
-                Table.statement.executeQuery(sqlQuerySam);
-                //qRows -= 1;
-                Table.statement.executeQuery("COMMIT");
-                JOptionPane.showMessageDialog(null, "Dodano samochód!", "Informacja", JOptionPane.INFORMATION_MESSAGE);
-                index = Projekt.tabbedPanel.indexOfTab("Dodawanie auta");
-                // System.out.println("Index tabeli usuwanej: " + index);
-                if (index >= 0) {
-
-                    Projekt.tabbedPanel.removeTabAt(index);
-                    //zmniejszanie indexu panelu aby później można było dodać znów
-                    Shelf.i--;
-                }
-                index = Projekt.tabbedPanel.indexOfTab("Panel główny");
+                JComponent pricePanel = Shelf.createShelf(Projekt.tabbedPanel, name, "", "Lista aut na stanie...", "ikona1.gif");
+                Projekt.tabbedPanel.updateUI();
+                //Sprawdzamy jaki jest index ostatnio stworzonej tabeli aby można dodać akcje do przycisku.
+                Projekt.addCloseButtonToPane(name);
+                int index = Projekt.tabbedPanel.indexOfTab(name);
+                //Table workers=new Table("Pracownicy");
                 Projekt.tabbedPanel.setSelectedIndex(index);
 
-            }catch(Exception e)
+
+                //JFrame priceWindow=new JFrame("Dodatkowe parametry");
+                //priceWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                // priceWindow.setSize(500,200);
+                //priceWindow.setResizable(false);
+                JPanel winPanel = new JPanel();
+                winPanel.setPreferredSize(new Dimension(1180, 600));
+                pricePanel.add(winPanel);
+                Car.createPriceWindow(winPanel, row_id, Auto);
+                pricePanel.setVisible(true);
+            }else
             {
-                System.out.println("Błąd w dodawaniu samochodu do bazy!");
+                Car.addCarToBase(rowAdd, Auto);
             }
+
+
 
         }else if(event.getActionCommand().equals("condition")){
 
@@ -571,6 +508,29 @@ public class HandlerClass implements ActionListener{
             } else {
                 JOptionPane.showMessageDialog(null, "Panel z pracownikami został już otwarty!", "Błąd!", JOptionPane.INFORMATION_MESSAGE);
             }
+        }else if(event.getActionCommand().equals("cancelModify")){
+            int index;
+            index = Projekt.tabbedPanel.indexOfTab("Modyfikacja auta");
+            // System.out.println("Index tabeli usuwanej: " + index);
+            if (index >= 0) {
+
+                Projekt.tabbedPanel.removeTabAt(index);
+                //zmniejszanie indexu panelu aby później można było dodać znów
+                Shelf.i--;
+            }
+            index = Projekt.tabbedPanel.indexOfTab("Auta na stanie");
+            Projekt.tabbedPanel.setSelectedIndex(index);
+        }else if(event.getActionCommand().equals("addCarToBase"))
+        {
+            Car.addCarToBase(rowAdd, AutoAdd);
+        }else if(event.getActionCommand().equals("sellCar"))
+        {
+            System.out.println("ID stanu w actionListenerze przed przekazaniem: "+stateRowID);
+            Car.sellCar(stateRowID, rowAdd);
+        }else if(event.getActionCommand().equals("acceptSell"))
+        {
+
+                Car.acceptSell(stateRowID, rowAdd, sellData);
         }
     }
 }
