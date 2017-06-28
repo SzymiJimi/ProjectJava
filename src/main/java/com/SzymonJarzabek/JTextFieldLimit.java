@@ -7,9 +7,12 @@ import javax.swing.text.PlainDocument;
 /**
  * Created by Szymon on 2017-06-12.
  */
+
+/**
+ * Klasa do tworzenia textfieldów o ograniczonej możliwości wprowadzania znaków
+ */
 public class JTextFieldLimit extends PlainDocument {
     private int limit;
-    // optional uppercase conversion
     private boolean toUppercase = false;
 
     JTextFieldLimit(int limit) {
@@ -17,14 +20,8 @@ public class JTextFieldLimit extends PlainDocument {
         this.limit = limit;
     }
 
-    JTextFieldLimit(int limit, boolean upper) {
-        super();
-        this.limit = limit;
-        toUppercase = upper;
-    }
-
     public void insertString
-            (int offset, String  str, AttributeSet attr)
+            (int offset, String str, AttributeSet attr)
             throws BadLocationException {
         if (str == null) return;
 

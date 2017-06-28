@@ -5,13 +5,17 @@ import javax.swing.*;
 /**
  * Created by Szymon on 2017-06-24.
  */
+
+/**
+ * Klasa przechowująca informacje o samochodzie
+ */
 public class Equipment {
 
-    String name;
-    boolean check;
-    String data;
-    int workID;
-    int salary;
+    public String name;
+    public boolean check;
+    public String data;
+    public int workID;
+    public int salary;
 
     public JTextField clientName;
     public JTextField clientSurname;
@@ -19,7 +23,6 @@ public class Equipment {
     public JTextField price;
     public JTextField clientPESEL;
     public JComboBox sex;
-
 
     public Equipment() {
 
