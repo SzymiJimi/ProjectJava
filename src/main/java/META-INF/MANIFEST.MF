@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: ojdbc8.jar sqlite-jdbc-3.16.1.jar ojdbc8.jar sqlite-jdbc-3
+ .16.1.jar
+Main-Class: com.SzymonJarzabek.Projekt
+

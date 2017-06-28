@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact name="ProjectJava:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProjectJava_jar</output-path>
+    <root id="root">
+      <element id="archive" name="ProjectJava.jar">
+        <element id="module-output" name="ProjectJava" />
+      </element>
+      <element id="library" level="project" name="ojdbc8" />
+      <element id="library" level="project" name="sqlite-jdbc-3.16.1" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/com/SzymonJarzabek/database/ojdbc8.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/com/SzymonJarzabek/database/sqlite-jdbc-3.16.1.jar" />
+    </root>
+  </artifact>
+</component>

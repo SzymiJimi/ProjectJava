@@ -11,6 +11,7 @@ public class Equipment {
     boolean check;
     String data;
     int workID;
+    int salary;
 
     public JTextField clientName;
     public JTextField clientSurname;

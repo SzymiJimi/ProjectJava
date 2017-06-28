@@ -420,7 +420,7 @@ public class MouseHandler implements MouseListener{
     public void showCar (int rowek)
     {
         int row=0;
-        rowek+=1;
+       // rowek+=1;
         try {
             ResultSet result = Table.statement.executeQuery("Select SAMOCHOD_ID from NA_STANIE where ID_STANU=" + rowek);
             while (result.next()) {
@@ -638,40 +638,30 @@ public class MouseHandler implements MouseListener{
             e.consume();
             int count= e.getClickCount();
             System.out.println("Kliknieto: "+count+" razy!");
-            int row, column;
-            row=this.table.getSelectedRow();
-            column=this.table.getSelectedColumn();
-            System.out.println("Zaznaczono: "+row+" wiersz i "+column+" kolumne!");
+            int rowek, column;
+            if(this.table.getName()=="PRACOWNICY")
+            {
+                rowek = this.table.getSelectedRow();
+                Object value = this.table.getValueAt(rowek, 5);
+                String readed = (String) value;
 
-/*
-            int index;
-            String name = "Modyfikacja auta";
-            if (Projekt.tabbedPanel.indexOfTab(name) == -1) {
+                int row = Integer.parseInt(readed);
+                Person.showWorker(row);
 
-                try {
+            }else {
 
-                    //Wykorzystujemy swoją klase do stworzenia panelu
-                    JComponent addCarPanel = Shelf.createShelf(Projekt.tabbedPanel, name, "", "Modyfikacja dodanego auta", "ikona1.gif");
-                    Projekt.tabbedPanel.updateUI();
-                    //Sprawdzamy jaki jest index ostatnio stworzonej tabeli aby można dodać akcje do przycisku.
-                    Projekt.addCloseButtonToPane(name);
-                    index = Projekt.tabbedPanel.indexOfTab(name);
-                    // Table=new Workers()
-                    Projekt.tabbedPanel.setSelectedIndex(index);
-                    //this.button.setEnabled(false);
-                    createAddCarPanel(addCarPanel); */
-                    showCar(row);
-    /*
-                } catch (Exception a) {
-                    System.out.println("Błąd w fokusowaniu...");
-                }
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Nie zakończyłeś dodawania innego samochodu!", "Błąd!", JOptionPane.INFORMATION_MESSAGE);
-             */
-            //handle double click event.
+                rowek = this.table.getSelectedRow();
+                column = this.table.getSelectedColumn();
+                Object value = this.table.getValueAt(rowek, 9);
+                String readed = (String) value;
+
+                int row = Integer.parseInt(readed);
+                //row-=1;
+                System.out.println("Zaznaczono: " + row + " wiersz i " + column + " kolumne!");
+                showCar(row);
+            }
         }
-        //int count= e.getClickCount();
-        //System.out.println("Kliknieto: "+count+" razy!");
+
     }
 }

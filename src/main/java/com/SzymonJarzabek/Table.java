@@ -3,7 +3,11 @@ package com.SzymonJarzabek;
 import javax.swing.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -21,6 +25,7 @@ public class Table {
     int tableType = -1;
     JTable table;
     String tableName;
+
     // protected TableView<Person> table = new TableView();
 
     //1=ADRESY
@@ -42,9 +47,27 @@ public class Table {
         colCount = colCount + name + "'";
         sqlColNames = sqlColNames + name + "'";
         getCount(name);
-        getColumns();
-        getColNames();
-        createSQL(name);
+
+        if(name=="NA_STANIE")
+        {
+          colNamesStan();
+          setSqlQuery();
+          qColumns=10;
+
+        }else if(name=="PRACOWNICY"){
+            colNamesWork();
+            setSqlWork();
+            qColumns=6;
+        } else if (name=="KLIENCI"){
+            colNamesCli();
+            setSqlCli();
+            qColumns=9;
+
+        }else {
+            getColumns();
+            getColNames();
+            createSQL(name);
+        }
         getOsoby();
 
     }
@@ -59,6 +82,41 @@ public class Table {
         colNames = tabela.colNames;
         sqlQueryAllData = tabela.sqlQueryAllData;
         table = tabela.table;
+    }
+
+    private void colNamesStan()
+    {
+        String names[]={"MARKA", "MODEL_AUTA", "ROK_PRODUKCJI","PRZEBIEG","MOC","TYP_SILNIKA", "WARTOSC", "NR_GARAZU", "POZYCJA", "ID_STANU"};
+        this.colNames=names;
+    }
+
+    private void colNamesWork()
+    {
+        String names[]={"IMIE", "NAZWISKO", "DATA_ZATRUDNIENIA","NIP","WYNAGRODZENIE", "PRACOWNIK_ID"};
+        this.colNames=names;
+    }
+
+    private void colNamesCli()
+    {
+        String names[]={"IMIE", "NAZWISKO","NIP","PLEC","MIEJSCOWOSC","ULICA","NR_DOMU","NR_MIESZKANIA", "DATA_P_ZAKUP"};
+        this.colNames=names;
+    }
+    private void setSqlQuery()
+    {
+        String query="Select SAMOCHODY.MARKA, SAMOCHODY.MODEL_AUTA, SAMOCHODY.ROK_PRODUKCJI, SAMOCHODY.PRZEBIEG, SAMOCHODY.MOC, SAMOCHODY.TYP_SILNIKA, NA_STANIE.WARTOSC, NA_STANIE.NR_GARAZU, NA_STANIE.POZYCJA, NA_STANIE.ID_STANU FROM NA_STANIE, SAMOCHODY WHERE NA_STANIE.SAMOCHOD_ID=SAMOCHODY.SAMOCHOD_ID ORDER BY SAMOCHODY.MARKA ASC, SAMOCHODY.MODEL_AUTA ASC";
+        this.sqlQueryAllData=query;
+    }
+
+    private void setSqlWork()
+    {
+        String query="Select OSOBY.IMIE, OSOBY.NAZWISKO, PRACOWNICY.DATA_ZATRUDNIENIA, OSOBY.NIP, PRACOWNICY.WYNAGRODZENIE, PRACOWNICY.PRACOWNIK_ID FROM PRACOWNICY, OSOBY WHERE PRACOWNICY.OSOBA_ID=OSOBY.OSOBA_ID AND PRACOWNICY.ZATRUDNIONY=1";
+        this.sqlQueryAllData=query;
+    }
+
+    private void setSqlCli()
+    {
+        String query="Select OSOBY.IMIE, OSOBY.NAZWISKO, OSOBY.NIP, KLIENCI.PLEC, ADRESY.MIEJSCOWOSC,  ADRESY.ULICA, ADRESY.NR_DOMU, ADRESY.NR_MIESZKANIA, KLIENCI.DATA_P_ZAKUP FROM KLIENCI,ADRESY, OSOBY WHERE KLIENCI.OSOBA_ID=OSOBY.OSOBA_ID AND KLIENCI.ADRES_ID=ADRESY.ADRES_ID";
+        this.sqlQueryAllData=query;
     }
 
     private void setTableType(String name) {
@@ -109,7 +167,7 @@ public class Table {
     public void deleteRow(String name, int row) {
         try {
             sqlDeleteRow = sqlDeleteRow + name + " WHERE " + colNames[0] + "=" + row;
-            System.out.println("Zapytanie: " + sqlDeleteRow);
+            System.out.println("Zapytanie w delete: " + sqlDeleteRow);
             statement.executeQuery(sqlDeleteRow);
             qRows -= 1;
             statement.executeQuery("COMMIT");
@@ -130,7 +188,6 @@ public class Table {
             }
         }
         sqlQueryAllData = sqlQueryAllData + "FROM " + name;
-        //System.out.println("Zapytanie: "+sqlQueryAllData);
     }
 
     protected void showObj(Object[][] obj) {
@@ -145,7 +202,7 @@ public class Table {
 
     protected void getOsoby() {
         try {
-            System.out.println("Zapytanie: " + sqlQueryAllData);
+            System.out.println("Zapytanie w getOs: " + sqlQueryAllData);
             ResultSet rs = statement.executeQuery(sqlQueryAllData);
             this.dataX = new Object[qRows][qColumns];//---------------------------
             for (int j = 0; j < qColumns; j++)  //---------------------------------------
@@ -154,16 +211,20 @@ public class Table {
                     dataX[k][j] = new Object();
                 }
             }
+            System.out.println("przeszło inicjowanie");
             int l = 0;
             System.out.println("Ilosc kolumn: " + qColumns);
             while (rs.next()) {
                 //Retrieve by column name
-                for (int i = 0; i < qColumns; i++) {   //-------------------
-                    dataX[l][i] = rs.getString(colNames[i]);
+                for (int i = 0; i < qColumns; i++) {
+
+                        dataX[l][i] = rs.getString(colNames[i]);
+
                 }
                 l++;
             }
             rs.close();
+
             creatDataTable(statement);
         } catch (Exception e) {
             System.out.println("Błąd w getosoby");
@@ -199,11 +260,11 @@ public class Table {
     }
 
 
-    public void setWidthColumn(int width, int index, Object[][] data, String columnNames[]) {
+    public void setWidthColumn(int width, int index) {
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.getColumnModel().getColumn(index).setMinWidth(width);
         table.getColumnModel().getColumn(index).setMaxWidth(width);
-        DefaultTableModel tableModel = new DefaultTableModel(data, columnNames) {
+        DefaultTableModel tableModel = new DefaultTableModel(dataX, colNames) {
 
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -211,14 +272,55 @@ public class Table {
                 //System.out.println("Zaznaczono: "+row+" wiersz i "+column+" kolumne!");
                 return false;
             }
+
+            @Override
+            public Class getColumnClass(int column) {
+                switch (column) {
+                    case 0:
+                        return String.class;
+                    case 1:
+                        return String.class;
+                    case 2:
+                        return Integer.class;
+                    case 3:
+                        return Integer.class;
+                    case 4:
+                        return Integer.class;
+                    case 5:
+                        return String.class;
+                    case 6:
+                        return Integer.class;
+                    case 7:
+                        return Integer.class;
+                    case 8:
+                        return Integer.class;
+                    case 9:
+                        return Integer.class;
+                    default:
+                        return String.class;
+                }
+            }
         };
         table.setModel(tableModel);
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(table.getModel());
+        table.setRowSorter(sorter);
+
+        //table.setAutoCreateRowSorter(true);
+
+      /*  table.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<>(200);
+        sortKeys.add(new RowSorter.SortKey(7, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+        sorter.setSortKeys(sortKeys);
+        */
+
     }
 
     protected void creatDataTable(Statement stmt) {
         table = new JTable(this.dataX, colNames);
         for (int i = 0; i < qColumns; i++) {    //=--------------------------
-            setWidthColumn(100, i, this.dataX, this.colNames);
+            setWidthColumn(100, i);
         }
 
     }

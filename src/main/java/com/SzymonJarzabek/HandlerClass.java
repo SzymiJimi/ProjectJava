@@ -30,6 +30,7 @@ import javax.swing.JPanel;
  */
 public class HandlerClass implements ActionListener{
 
+    Equipment salary;
     int rowAdd;
     int stateRowID;
     Car AutoAdd;
@@ -92,11 +93,22 @@ public class HandlerClass implements ActionListener{
         this.AutoAdd=Auto;
     }
 
+    public HandlerClass(int row, Equipment salary)
+    {
+        this.rowAdd=row;
+        this.salary=salary;
+    }
+
     public HandlerClass(int row, int stateID)
     {
         this.rowAdd=row;
         this.stateRowID=stateID;
-        System.out.println("ID stanu w konstruktorze: "+rowAdd);
+
+    }
+
+    public HandlerClass(int row)
+    {
+        this.rowAdd=row;
     }
 
     public HandlerClass(Equipment sellData, int stateID, int carRow)
@@ -406,8 +418,11 @@ public class HandlerClass implements ActionListener{
                         //Sprawdzamy jaki jest index ostatnio stworzonej tabeli aby można dodać akcje do przycisku.
                         Projekt.addCloseButtonToPane(name);
                         index = Projekt.tabbedPanel.indexOfTab(name);
-                        Projekt.createTable("PRACOWNICY", workersPanel);
+                        JTable table= Projekt.createTable("PRACOWNICY", workersPanel);
                         //Table workers=new Table("Pracownicy");
+                        table.setName("PRACOWNICY");
+                        MouseHandler handler=new MouseHandler(table);
+                        table.addMouseListener(handler);
 
                         Projekt.tabbedPanel.setSelectedIndex(index);
 
@@ -446,7 +461,6 @@ public class HandlerClass implements ActionListener{
 
         }else if(event.getActionCommand().equals("acceptAddCar")){
 
-            System.out.println("Wcisnieto! row id wynosi: "+row_id);
 
             if(row_id==-1) {
                 String name = "Dodatkowe parametry auta";
@@ -525,12 +539,93 @@ public class HandlerClass implements ActionListener{
             Car.addCarToBase(rowAdd, AutoAdd);
         }else if(event.getActionCommand().equals("sellCar"))
         {
-            System.out.println("ID stanu w actionListenerze przed przekazaniem: "+stateRowID);
             Car.sellCar(stateRowID, rowAdd);
         }else if(event.getActionCommand().equals("acceptSell"))
         {
 
                 Car.acceptSell(stateRowID, rowAdd, sellData);
+        }else if(event.getActionCommand().equals("lastSelled"))
+        {
+            int index;
+            String name = "Sprzedane auta";
+            if (Projekt.tabbedPanel.indexOfTab(name) == -1) {
+
+                try {
+                    //Wykorzystujemy swoją klase do stworzenia panelu
+                    JComponent conditionPanel = Shelf.createShelf(Projekt.tabbedPanel, name, "", "Lista aut sprzedanych...", "ikona1.gif");
+                    Projekt.tabbedPanel.updateUI();
+                    //Sprawdzamy jaki jest index ostatnio stworzonej tabeli aby można dodać akcje do przycisku.
+                    Projekt.addCloseButtonToPane(name);
+                    index = Projekt.tabbedPanel.indexOfTab(name);
+                    JTable table=Projekt.createTable("SPRZEDANE", conditionPanel);
+                    int row=table.getSelectedRow();
+                    //Table workers=new Table("Pracownicy");
+                    Projekt.tabbedPanel.setSelectedIndex(index);
+
+                    MouseHandler handler=new MouseHandler(table);
+                    table.addMouseListener(handler);
+
+
+                } catch (Exception e) {
+                    System.out.println("Błąd w fokusowaniu...");
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Panel z pracownikami został już otwarty!", "Błąd!", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else if(event.getActionCommand().equals("changeSalary"))
+        {
+            String name = "Nowe wynagrodzenie";
+            //int rokInt=Integer.parseInt(rokTxt);
+
+
+            JComponent pricePanel = Shelf.createShelf(Projekt.tabbedPanel, name, "", "Nowe wynagrodzenie dla pracownika...", "ikona1.gif");
+            Projekt.tabbedPanel.updateUI();
+            Projekt.addCloseButtonToPane(name);
+            int index = Projekt.tabbedPanel.indexOfTab(name);
+            Projekt.tabbedPanel.setSelectedIndex(index);
+
+            JPanel winPanel = new JPanel();
+            winPanel.setPreferredSize(new Dimension(1180, 600));
+            pricePanel.add(winPanel);
+            Person.createSalaryWindow(winPanel, rowAdd);
+            pricePanel.setVisible(true);
+        }else if(event.getActionCommand().equals("acceptSalary")){
+
+            int data=Integer.parseInt(salary.price.getText());
+            Person.changeSalary(data, rowAdd);
+        }else if(event.getActionCommand().equals("backToStart")){
+
+           Person.backToStart();
+        }else if(event.getActionCommand().equals("releaseWorker")){
+
+            Person.release(rowAdd);
+            JOptionPane.showMessageDialog(null, "Zwolniono pracownika!", "Informacja", JOptionPane.INFORMATION_MESSAGE);
+            Person.backToStart();
+        }else if(event.getActionCommand().equals("Clients")){
+
+            int index;
+            String name = "Klienci";
+            if (Projekt.tabbedPanel.indexOfTab(name) == -1) {
+
+                try {
+                    JComponent conditionPanel = Shelf.createShelf(Projekt.tabbedPanel, name, "", "Lista aut sprzedanych...", "ikona1.gif");
+                    Projekt.tabbedPanel.updateUI();
+                    //Sprawdzamy jaki jest index ostatnio stworzonej tabeli aby można dodać akcje do przycisku.
+                    Projekt.addCloseButtonToPane(name);
+                    index = Projekt.tabbedPanel.indexOfTab(name);
+                    JTable table=Projekt.createTable("KLIENCI", conditionPanel);
+                    Projekt.tabbedPanel.setSelectedIndex(index);
+
+                    MouseHandler handler=new MouseHandler(table);
+                    table.addMouseListener(handler);
+
+
+                } catch (Exception e) {
+                    System.out.println("Błąd w fokusowaniu...");
+                }
+
+            }
         }
     }
 }

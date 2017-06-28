@@ -241,8 +241,7 @@ public class Projekt implements ActionListener{
         //Zakładki
         // tabbedPanel.setBounds(0,0,1200,800);
         mainPanel=Shelf.createShelf(tabbedPanel, "Panel główny", "Text", "Główny panel", "ikona1.gif"); //Utworzenie i dodanie zakładki "Panel Główny"
-        JComponent panel2=Shelf.createShelf(tabbedPanel, "Nazwa1", "Text1", "Tip1", "ikona1.gif");    //Utworzenie i dodanie zakładki "Nazwa1"
-        addCloseButtonToPane("Nazwa1");
+
 
 
         //xxxxxxxx
@@ -312,6 +311,14 @@ public class Projekt implements ActionListener{
         butStan.setActionCommand("condition");
         HandlerClass handlerCondition=new HandlerClass(butStan);
         butStan.addActionListener(handlerCondition);
+
+        butSprzed.setActionCommand("lastSelled");
+        HandlerClass handlerSell=new HandlerClass(butSprzed);
+        butSprzed.addActionListener(handlerSell);
+
+        butKli.setActionCommand("Clients");
+        HandlerClass handlerClients=new HandlerClass(butSprzed);
+        butKli.addActionListener(handlerSell);
 
 
         JLabel logInfo=new JLabel("Zalogowano jako:");

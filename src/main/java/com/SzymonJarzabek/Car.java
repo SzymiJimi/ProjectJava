@@ -204,7 +204,7 @@ public class Car {
             Table.statement.executeQuery(sqlQuerySam);
             //qRows -= 1;
             Table.statement.executeQuery("COMMIT");
-            if (row_id != -1) {
+            if (row_id == -1) {
                 Table.statement.executeQuery(sqlQueryStan);
                 Table.statement.executeQuery("COMMIT");
             }
