@@ -1,0 +1,84 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Œr Cze 28 02:10:53 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   wyposazenie.ctl
+Data File:      dane\wyposazenie.csv
+  Bad File:     wyposazenie.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table WYPOSAZENIE, loaded from every logical record.
+Insert option in effect for this table: REPLACE
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+WYPOSAZENIE_ID                      FIRST     *   ;       CHARACTER            
+PODUSZKI_POW                         NEXT     *   ;       CHARACTER            
+ABS_                                 NEXT     *   ;       CHARACTER            
+ESP                                  NEXT     *   ;       CHARACTER            
+WSP_KIER                             NEXT     *   ;       CHARACTER            
+BLUETOOTH                            NEXT     *   ;       CHARACTER            
+CZ_ZMIERZCH                          NEXT     *   ;       CHARACTER            
+CZ_PARK                              NEXT     *   ;       CHARACTER            
+CZ_DESZCZ                            NEXT     *   ;       CHARACTER            
+EL_LUSTERKA                          NEXT     *   ;       CHARACTER            
+EL_SZYBY_P                           NEXT     *   ;       CHARACTER            
+EL_SZYBY_T                           NEXT     *   ;       CHARACTER            
+PODGRZ_LUST_BOK                      NEXT     *   ;       CHARACTER            
+PODGRZ_SIEDZ_P                       NEXT     *   ;       CHARACTER            
+PODGRZ_SIEDZ_T                       NEXT     *   ;       CHARACTER            
+PODGRZ_KIER                          NEXT     *   ;       CHARACTER            
+IMMOBILIZER                          NEXT     *   ;       CHARACTER            
+ALARM                                NEXT     *   ;       CHARACTER            
+CENTRALNY_ZAM                        NEXT     *   ;       CHARACTER            
+PILOT                                NEXT     *   ;       CHARACTER            
+MP3                                  NEXT     *   ;       CHARACTER            
+GN_AUX                               NEXT     *   ;       CHARACTER            
+RADIO_FABR                           NEXT     *   ;       CHARACTER            
+CD                                   NEXT     *   ;       CHARACTER            
+KOMP_POKLAD                          NEXT     *   ;       CHARACTER            
+GNIAZDO_12V                          NEXT     *   ;       CHARACTER            
+TEMPOMAT                             NEXT     *   ;       CHARACTER            
+AKTYW_TEMPOMAT                       NEXT     *   ;       CHARACTER            
+LINE_ASIST                           NEXT     *   ;       CHARACTER            
+KURTYNY_POW                          NEXT     *   ;       CHARACTER            
+ISOFIX                               NEXT     *   ;       CHARACTER            
+CIEMN_SZYBY                          NEXT     *   ;       CHARACTER            
+ALUFELGI                             NEXT     *   ;       CHARACTER            
+RELINGI                              NEXT     *   ;       CHARACTER            
+SW_LED                               NEXT     *   ;       CHARACTER            
+SW_XENON                             NEXT     *   ;       CHARACTER            
+SW_DZIEN                             NEXT     *   ;       CHARACTER            
+
+value used for ROWS parameter changed from 64 to 26
+
+Table WYPOSAZENIE:
+  400 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 248196 bytes(26 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:           400
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Œr Cze 28 02:10:53 2017
+Run ended on Œr Cze 28 02:10:53 2017
+
+Elapsed time was:     00:00:00.32
+CPU time was:         00:00:00.03

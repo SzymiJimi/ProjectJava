@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1497895534 source:d:\wojtek\studia\programowanie\c++\generator od sir s. j.\main.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<ctime>
+
+1497952550 source:d:\wojtek\studia\programowanie\c++\generator od sir s. j\main.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<ctime>
+
+1497987273 source:d:\wojtek\studia\programowanie\c++\projekt java baza generator\osoby\main.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<ctime>
+

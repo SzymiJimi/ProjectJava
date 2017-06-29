@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1497988074 source:d:\wojtek\studia\programowanie\c++\projekt java baza generator\na_stanie\main.cpp
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<ctime>
+	<string>
+

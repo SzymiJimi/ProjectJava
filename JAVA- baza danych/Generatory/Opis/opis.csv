@@ -1,0 +1,400 @@
+1;Manualna;Uszkodzony;Pick-up;Polska;1;-
+2;Automatyczna;Uszkodzony;Minivan;Polska;1;-
+3;Manualna;Używany;Kombi;Rosja;0;-
+4;Automatyczna;Używany;Minivan;Polska;1;-
+5;Manualna;Nowy;Sedan;USA;1;-
+6;Automatyczna;Uszkodzony;Kombi;Wielka Brytania;0;-
+7;Automatyczna;Nowy;Minivan;Wielka Brytania;1;-
+8;Automatyczna;Uszkodzony;Kombi;USA;0;-
+9;Manualna;Używany;Minivan;Wielka Brytania;1;-
+10;Manualna;Używany;Pick-up;Polska;1;-
+11;Manualna;Nowy;Pick-up;Wielka Brytania;0;-
+12;Manualna;Używany;Hatch-back;Niemcy;1;-
+13;Automatyczna;Nowy;Pick-up;Polska;0;-
+14;Automatyczna;Uszkodzony;Pick-up;Polska;0;-
+15;Manualna;Uszkodzony;Minivan;Polska;1;-
+16;Manualna;Nowy;Kombi;Wielka Brytania;1;-
+17;Automatyczna;Nowy;Lift-back;Wielka Brytania;1;-
+18;Manualna;Nowy;Lift-back;Wielka Brytania;0;-
+19;Manualna;Uszkodzony;Kabriolet;Wielka Brytania;0;-
+20;Automatyczna;Nowy;Hatch-back;USA;1;-
+21;Manualna;Uszkodzony;Minivan;Niemcy;0;-
+22;Automatyczna;Uszkodzony;Minivan;Rosja;0;-
+23;Manualna;Nowy;Minivan;Rosja;0;-
+24;Manualna;Nowy;Lift-back;Niemcy;1;-
+25;Manualna;Używany;Pick-up;Rosja;1;-
+26;Automatyczna;Uszkodzony;Sedan;Polska;1;-
+27;Manualna;Uszkodzony;Hatch-back;Polska;0;-
+28;Automatyczna;Nowy;Kabriolet;USA;0;-
+29;Automatyczna;Uszkodzony;Minivan;Rosja;1;-
+30;Automatyczna;Uszkodzony;Kombi;Niemcy;0;-
+31;Manualna;Nowy;Pick-up;Rosja;0;-
+32;Automatyczna;Uszkodzony;Kabriolet;Rosja;1;-
+33;Automatyczna;Nowy;Kabriolet;Niemcy;1;-
+34;Manualna;Uszkodzony;Kombi;Polska;0;-
+35;Manualna;Nowy;Hatch-back;Polska;1;-
+36;Automatyczna;Nowy;Pick-up;Niemcy;1;-
+37;Automatyczna;Uszkodzony;Minivan;Rosja;1;-
+38;Automatyczna;Używany;Sedan;Rosja;1;-
+39;Manualna;Używany;Lift-back;Polska;1;-
+40;Manualna;Używany;Hatch-back;Polska;0;-
+41;Manualna;Uszkodzony;Kabriolet;Niemcy;0;-
+42;Automatyczna;Nowy;Pick-up;Rosja;0;-
+43;Automatyczna;Nowy;Hatch-back;Polska;0;-
+44;Automatyczna;Nowy;Kombi;Wielka Brytania;0;-
+45;Manualna;Nowy;Hatch-back;Niemcy;0;-
+46;Manualna;Uszkodzony;Minivan;USA;1;-
+47;Automatyczna;Uszkodzony;Kombi;Polska;1;-
+48;Manualna;Nowy;Pick-up;Niemcy;0;-
+49;Automatyczna;Uszkodzony;Hatch-back;USA;1;-
+50;Automatyczna;Nowy;Minivan;USA;0;-
+51;Manualna;Używany;Kabriolet;Niemcy;1;-
+52;Manualna;Nowy;Kombi;Wielka Brytania;1;-
+53;Automatyczna;Uszkodzony;Minivan;Wielka Brytania;1;-
+54;Automatyczna;Nowy;Hatch-back;Rosja;0;-
+55;Manualna;Nowy;Pick-up;Polska;1;-
+56;Manualna;Używany;Kabriolet;Polska;0;-
+57;Manualna;Używany;Pick-up;Wielka Brytania;0;-
+58;Manualna;Używany;Hatch-back;Niemcy;1;-
+59;Automatyczna;Używany;Kombi;Niemcy;1;-
+60;Automatyczna;Nowy;Kabriolet;Polska;0;-
+61;Manualna;Używany;Kombi;Polska;1;-
+62;Automatyczna;Nowy;Hatch-back;Wielka Brytania;0;-
+63;Manualna;Uszkodzony;Minivan;USA;0;-
+64;Manualna;Używany;Pick-up;Rosja;0;-
+65;Automatyczna;Nowy;Minivan;Rosja;1;-
+66;Manualna;Używany;Minivan;Wielka Brytania;1;-
+67;Automatyczna;Uszkodzony;Sedan;USA;0;-
+68;Automatyczna;Używany;Lift-back;Polska;1;-
+69;Automatyczna;Używany;Lift-back;Wielka Brytania;0;-
+70;Manualna;Uszkodzony;Kombi;USA;0;-
+71;Automatyczna;Używany;Hatch-back;USA;0;-
+72;Manualna;Używany;Sedan;Wielka Brytania;0;-
+73;Manualna;Uszkodzony;Lift-back;USA;0;-
+74;Automatyczna;Używany;Kombi;USA;0;-
+75;Automatyczna;Używany;Kabriolet;Wielka Brytania;0;-
+76;Automatyczna;Uszkodzony;Hatch-back;Rosja;1;-
+77;Manualna;Uszkodzony;Kabriolet;Wielka Brytania;1;-
+78;Manualna;Uszkodzony;Sedan;Niemcy;0;-
+79;Manualna;Uszkodzony;Sedan;Wielka Brytania;0;-
+80;Manualna;Uszkodzony;Lift-back;Niemcy;0;-
+81;Manualna;Nowy;Hatch-back;Wielka Brytania;1;-
+82;Automatyczna;Uszkodzony;Kombi;Rosja;0;-
+83;Automatyczna;Nowy;Kombi;Rosja;0;-
+84;Automatyczna;Nowy;Pick-up;Polska;1;-
+85;Automatyczna;Uszkodzony;Hatch-back;Niemcy;1;-
+86;Automatyczna;Nowy;Pick-up;Niemcy;0;-
+87;Automatyczna;Nowy;Kombi;Polska;1;-
+88;Automatyczna;Używany;Lift-back;Polska;0;-
+89;Automatyczna;Nowy;Pick-up;USA;1;-
+90;Automatyczna;Używany;Pick-up;Rosja;1;-
+91;Automatyczna;Nowy;Minivan;Polska;0;-
+92;Manualna;Używany;Kabriolet;Wielka Brytania;1;-
+93;Automatyczna;Nowy;Lift-back;Rosja;0;-
+94;Manualna;Uszkodzony;Pick-up;USA;1;-
+95;Manualna;Uszkodzony;Minivan;Wielka Brytania;1;-
+96;Manualna;Uszkodzony;Sedan;Rosja;0;-
+97;Automatyczna;Uszkodzony;Sedan;Polska;0;-
+98;Manualna;Używany;Sedan;Polska;0;-
+99;Manualna;Uszkodzony;Hatch-back;Niemcy;0;-
+100;Automatyczna;Uszkodzony;Lift-back;USA;1;-
+101;Automatyczna;Uszkodzony;Kombi;Rosja;0;-
+102;Automatyczna;Nowy;Kabriolet;Niemcy;1;-
+103;Automatyczna;Używany;Pick-up;Niemcy;1;-
+104;Automatyczna;Nowy;Pick-up;USA;0;-
+105;Automatyczna;Używany;Kabriolet;Rosja;0;-
+106;Automatyczna;Używany;Lift-back;Wielka Brytania;0;-
+107;Manualna;Uszkodzony;Sedan;Wielka Brytania;0;-
+108;Automatyczna;Nowy;Hatch-back;Polska;1;-
+109;Automatyczna;Uszkodzony;Sedan;Niemcy;1;-
+110;Automatyczna;Nowy;Sedan;Niemcy;1;-
+111;Automatyczna;Nowy;Hatch-back;Wielka Brytania;1;-
+112;Automatyczna;Uszkodzony;Kabriolet;USA;0;-
+113;Automatyczna;Używany;Kombi;Niemcy;0;-
+114;Manualna;Używany;Kombi;USA;1;-
+115;Automatyczna;Nowy;Kabriolet;Niemcy;0;-
+116;Manualna;Nowy;Kombi;Niemcy;0;-
+117;Automatyczna;Uszkodzony;Pick-up;Polska;1;-
+118;Automatyczna;Uszkodzony;Lift-back;USA;1;-
+119;Automatyczna;Uszkodzony;Sedan;Rosja;0;-
+120;Automatyczna;Uszkodzony;Kabriolet;Wielka Brytania;1;-
+121;Automatyczna;Uszkodzony;Kabriolet;Rosja;0;-
+122;Manualna;Używany;Pick-up;USA;1;-
+123;Automatyczna;Nowy;Pick-up;Polska;0;-
+124;Manualna;Uszkodzony;Sedan;Niemcy;1;-
+125;Manualna;Nowy;Kabriolet;Polska;1;-
+126;Automatyczna;Nowy;Kabriolet;Niemcy;0;-
+127;Manualna;Nowy;Hatch-back;Niemcy;1;-
+128;Automatyczna;Uszkodzony;Lift-back;USA;1;-
+129;Automatyczna;Używany;Kabriolet;USA;1;-
+130;Automatyczna;Uszkodzony;Minivan;Polska;0;-
+131;Manualna;Używany;Pick-up;Rosja;0;-
+132;Manualna;Używany;Sedan;Niemcy;1;-
+133;Automatyczna;Używany;Hatch-back;USA;1;-
+134;Automatyczna;Używany;Hatch-back;Wielka Brytania;1;-
+135;Automatyczna;Używany;Minivan;USA;1;-
+136;Automatyczna;Używany;Hatch-back;Niemcy;0;-
+137;Automatyczna;Używany;Kabriolet;Niemcy;0;-
+138;Manualna;Nowy;Hatch-back;Niemcy;1;-
+139;Manualna;Nowy;Pick-up;Wielka Brytania;1;-
+140;Automatyczna;Używany;Hatch-back;Rosja;0;-
+141;Automatyczna;Używany;Pick-up;USA;0;-
+142;Automatyczna;Używany;Kombi;Niemcy;1;-
+143;Automatyczna;Używany;Hatch-back;Niemcy;1;-
+144;Automatyczna;Uszkodzony;Kombi;Polska;0;-
+145;Manualna;Używany;Sedan;USA;1;-
+146;Automatyczna;Uszkodzony;Minivan;Niemcy;0;-
+147;Manualna;Nowy;Lift-back;Niemcy;0;-
+148;Manualna;Nowy;Kombi;USA;0;-
+149;Automatyczna;Nowy;Minivan;Niemcy;0;-
+150;Manualna;Nowy;Hatch-back;Polska;0;-
+151;Automatyczna;Uszkodzony;Kombi;Wielka Brytania;1;-
+152;Manualna;Używany;Kombi;Wielka Brytania;1;-
+153;Automatyczna;Używany;Sedan;Wielka Brytania;1;-
+154;Automatyczna;Używany;Pick-up;Rosja;0;-
+155;Manualna;Nowy;Lift-back;Polska;1;-
+156;Automatyczna;Nowy;Pick-up;Wielka Brytania;1;-
+157;Manualna;Używany;Lift-back;Wielka Brytania;1;-
+158;Automatyczna;Nowy;Sedan;USA;0;-
+159;Automatyczna;Uszkodzony;Minivan;Niemcy;1;-
+160;Manualna;Nowy;Sedan;Rosja;1;-
+161;Automatyczna;Używany;Pick-up;Rosja;0;-
+162;Automatyczna;Uszkodzony;Hatch-back;Rosja;0;-
+163;Automatyczna;Nowy;Minivan;Rosja;0;-
+164;Manualna;Uszkodzony;Kombi;USA;1;-
+165;Automatyczna;Uszkodzony;Sedan;Niemcy;0;-
+166;Automatyczna;Używany;Pick-up;USA;0;-
+167;Automatyczna;Uszkodzony;Kabriolet;Wielka Brytania;0;-
+168;Manualna;Nowy;Sedan;USA;0;-
+169;Manualna;Uszkodzony;Kombi;Niemcy;0;-
+170;Automatyczna;Uszkodzony;Hatch-back;Rosja;0;-
+171;Manualna;Nowy;Minivan;USA;0;-
+172;Manualna;Nowy;Kabriolet;Wielka Brytania;1;-
+173;Automatyczna;Nowy;Minivan;Niemcy;1;-
+174;Automatyczna;Używany;Pick-up;Niemcy;1;-
+175;Automatyczna;Używany;Minivan;USA;1;-
+176;Manualna;Używany;Kabriolet;Niemcy;0;-
+177;Automatyczna;Używany;Hatch-back;Polska;0;-
+178;Automatyczna;Nowy;Kombi;USA;1;-
+179;Automatyczna;Uszkodzony;Sedan;Wielka Brytania;0;-
+180;Manualna;Używany;Kombi;Polska;0;-
+181;Automatyczna;Używany;Lift-back;Rosja;0;-
+182;Automatyczna;Nowy;Sedan;Polska;0;-
+183;Automatyczna;Używany;Kombi;Rosja;1;-
+184;Automatyczna;Uszkodzony;Hatch-back;Niemcy;0;-
+185;Manualna;Nowy;Lift-back;Polska;0;-
+186;Automatyczna;Uszkodzony;Minivan;Rosja;1;-
+187;Automatyczna;Używany;Lift-back;USA;0;-
+188;Automatyczna;Uszkodzony;Sedan;Wielka Brytania;1;-
+189;Automatyczna;Uszkodzony;Sedan;Rosja;0;-
+190;Automatyczna;Uszkodzony;Kombi;Wielka Brytania;0;-
+191;Automatyczna;Używany;Hatch-back;Wielka Brytania;0;-
+192;Manualna;Uszkodzony;Minivan;Rosja;0;-
+193;Manualna;Używany;Lift-back;Wielka Brytania;1;-
+194;Automatyczna;Uszkodzony;Kombi;Niemcy;1;-
+195;Automatyczna;Uszkodzony;Lift-back;Polska;0;-
+196;Automatyczna;Uszkodzony;Minivan;Niemcy;1;-
+197;Automatyczna;Nowy;Pick-up;USA;0;-
+198;Automatyczna;Używany;Kabriolet;Polska;0;-
+199;Manualna;Uszkodzony;Sedan;Rosja;1;-
+200;Automatyczna;Uszkodzony;Lift-back;Niemcy;0;-
+201;Manualna;Używany;Sedan;USA;1;-
+202;Automatyczna;Uszkodzony;Minivan;Polska;1;-
+203;Automatyczna;Nowy;Kombi;Wielka Brytania;1;-
+204;Automatyczna;Nowy;Minivan;Niemcy;0;-
+205;Manualna;Uszkodzony;Hatch-back;Rosja;0;-
+206;Automatyczna;Nowy;Kombi;Rosja;1;-
+207;Automatyczna;Uszkodzony;Lift-back;Wielka Brytania;1;-
+208;Manualna;Uszkodzony;Kabriolet;Polska;1;-
+209;Manualna;Uszkodzony;Sedan;Wielka Brytania;0;-
+210;Automatyczna;Uszkodzony;Sedan;Rosja;1;-
+211;Manualna;Nowy;Sedan;USA;1;-
+212;Automatyczna;Uszkodzony;Pick-up;Polska;0;-
+213;Manualna;Nowy;Hatch-back;Niemcy;1;-
+214;Automatyczna;Nowy;Sedan;USA;1;-
+215;Manualna;Nowy;Sedan;Rosja;0;-
+216;Automatyczna;Uszkodzony;Sedan;Polska;0;-
+217;Manualna;Uszkodzony;Lift-back;Niemcy;0;-
+218;Manualna;Uszkodzony;Pick-up;Rosja;1;-
+219;Automatyczna;Nowy;Hatch-back;Wielka Brytania;0;-
+220;Manualna;Nowy;Lift-back;Polska;0;-
+221;Automatyczna;Używany;Lift-back;Polska;0;-
+222;Manualna;Uszkodzony;Kabriolet;Polska;1;-
+223;Manualna;Uszkodzony;Kabriolet;Niemcy;1;-
+224;Automatyczna;Używany;Minivan;Polska;0;-
+225;Manualna;Nowy;Hatch-back;Wielka Brytania;0;-
+226;Manualna;Uszkodzony;Pick-up;Niemcy;0;-
+227;Automatyczna;Nowy;Pick-up;Niemcy;1;-
+228;Automatyczna;Nowy;Lift-back;Rosja;0;-
+229;Manualna;Nowy;Hatch-back;Rosja;0;-
+230;Manualna;Nowy;Sedan;Wielka Brytania;1;-
+231;Automatyczna;Używany;Minivan;Rosja;1;-
+232;Manualna;Uszkodzony;Kabriolet;USA;1;-
+233;Manualna;Nowy;Kombi;Polska;1;-
+234;Manualna;Nowy;Hatch-back;Rosja;1;-
+235;Manualna;Używany;Hatch-back;Niemcy;1;-
+236;Automatyczna;Uszkodzony;Sedan;Wielka Brytania;0;-
+237;Automatyczna;Używany;Kombi;Wielka Brytania;1;-
+238;Manualna;Uszkodzony;Lift-back;Niemcy;1;-
+239;Manualna;Nowy;Minivan;Niemcy;1;-
+240;Automatyczna;Nowy;Hatch-back;Niemcy;0;-
+241;Automatyczna;Uszkodzony;Kombi;Polska;1;-
+242;Manualna;Nowy;Lift-back;Niemcy;1;-
+243;Automatyczna;Uszkodzony;Pick-up;Wielka Brytania;0;-
+244;Manualna;Używany;Lift-back;Polska;1;-
+245;Automatyczna;Uszkodzony;Lift-back;Polska;0;-
+246;Automatyczna;Używany;Kabriolet;USA;0;-
+247;Automatyczna;Nowy;Pick-up;USA;1;-
+248;Manualna;Nowy;Pick-up;Wielka Brytania;1;-
+249;Automatyczna;Nowy;Minivan;Wielka Brytania;0;-
+250;Manualna;Używany;Lift-back;Wielka Brytania;1;-
+251;Manualna;Używany;Kombi;Wielka Brytania;1;-
+252;Manualna;Nowy;Kombi;Polska;0;-
+253;Automatyczna;Uszkodzony;Pick-up;Wielka Brytania;0;-
+254;Automatyczna;Uszkodzony;Kombi;Niemcy;1;-
+255;Manualna;Uszkodzony;Lift-back;Polska;0;-
+256;Automatyczna;Uszkodzony;Sedan;Polska;1;-
+257;Automatyczna;Uszkodzony;Minivan;Rosja;0;-
+258;Automatyczna;Używany;Hatch-back;Wielka Brytania;0;-
+259;Manualna;Uszkodzony;Hatch-back;Niemcy;0;-
+260;Manualna;Nowy;Minivan;Polska;0;-
+261;Automatyczna;Uszkodzony;Sedan;USA;0;-
+262;Manualna;Nowy;Pick-up;USA;0;-
+263;Manualna;Używany;Pick-up;Wielka Brytania;0;-
+264;Manualna;Uszkodzony;Sedan;Rosja;0;-
+265;Manualna;Nowy;Minivan;USA;0;-
+266;Automatyczna;Używany;Sedan;USA;0;-
+267;Manualna;Nowy;Lift-back;Niemcy;1;-
+268;Automatyczna;Nowy;Sedan;Niemcy;1;-
+269;Manualna;Uszkodzony;Pick-up;Niemcy;1;-
+270;Automatyczna;Nowy;Lift-back;Niemcy;1;-
+271;Automatyczna;Nowy;Lift-back;Wielka Brytania;0;-
+272;Automatyczna;Używany;Kombi;Rosja;1;-
+273;Automatyczna;Nowy;Sedan;Wielka Brytania;1;-
+274;Manualna;Używany;Minivan;Polska;0;-
+275;Manualna;Używany;Pick-up;Rosja;1;-
+276;Automatyczna;Nowy;Sedan;Niemcy;1;-
+277;Automatyczna;Nowy;Hatch-back;Wielka Brytania;1;-
+278;Manualna;Używany;Lift-back;Wielka Brytania;0;-
+279;Manualna;Uszkodzony;Kombi;Rosja;1;-
+280;Automatyczna;Używany;Minivan;Niemcy;1;-
+281;Automatyczna;Nowy;Hatch-back;Niemcy;0;-
+282;Automatyczna;Uszkodzony;Pick-up;Rosja;0;-
+283;Manualna;Używany;Pick-up;USA;0;-
+284;Automatyczna;Używany;Lift-back;Wielka Brytania;0;-
+285;Automatyczna;Uszkodzony;Kombi;Wielka Brytania;1;-
+286;Manualna;Używany;Kabriolet;Polska;1;-
+287;Manualna;Uszkodzony;Lift-back;Wielka Brytania;1;-
+288;Manualna;Nowy;Kabriolet;USA;1;-
+289;Automatyczna;Nowy;Kabriolet;Polska;0;-
+290;Automatyczna;Uszkodzony;Pick-up;Polska;0;-
+291;Automatyczna;Nowy;Kabriolet;Polska;0;-
+292;Automatyczna;Nowy;Pick-up;Wielka Brytania;1;-
+293;Manualna;Używany;Sedan;Rosja;0;-
+294;Manualna;Uszkodzony;Kombi;Niemcy;1;-
+295;Automatyczna;Uszkodzony;Hatch-back;Niemcy;0;-
+296;Automatyczna;Używany;Sedan;Wielka Brytania;1;-
+297;Manualna;Nowy;Sedan;Wielka Brytania;1;-
+298;Automatyczna;Używany;Minivan;USA;1;-
+299;Automatyczna;Uszkodzony;Lift-back;Niemcy;1;-
+300;Automatyczna;Nowy;Kabriolet;Niemcy;0;-
+301;Automatyczna;Używany;Kombi;USA;1;-
+302;Automatyczna;Nowy;Lift-back;Polska;1;-
+303;Manualna;Nowy;Sedan;Rosja;1;-
+304;Manualna;Używany;Lift-back;Wielka Brytania;1;-
+305;Manualna;Nowy;Kabriolet;Wielka Brytania;1;-
+306;Manualna;Nowy;Kombi;Polska;1;-
+307;Manualna;Uszkodzony;Hatch-back;Wielka Brytania;1;-
+308;Automatyczna;Uszkodzony;Kabriolet;Polska;0;-
+309;Automatyczna;Nowy;Pick-up;Wielka Brytania;0;-
+310;Automatyczna;Nowy;Kabriolet;Wielka Brytania;0;-
+311;Manualna;Nowy;Kabriolet;USA;0;-
+312;Manualna;Używany;Lift-back;Wielka Brytania;1;-
+313;Automatyczna;Używany;Hatch-back;Polska;0;-
+314;Manualna;Nowy;Minivan;Niemcy;1;-
+315;Manualna;Uszkodzony;Kabriolet;Polska;1;-
+316;Automatyczna;Używany;Kabriolet;Wielka Brytania;0;-
+317;Manualna;Nowy;Pick-up;Rosja;1;-
+318;Manualna;Nowy;Sedan;Niemcy;0;-
+319;Manualna;Uszkodzony;Sedan;Polska;1;-
+320;Manualna;Nowy;Sedan;Niemcy;1;-
+321;Automatyczna;Używany;Kombi;Niemcy;0;-
+322;Automatyczna;Nowy;Kombi;USA;0;-
+323;Automatyczna;Nowy;Kombi;Rosja;1;-
+324;Manualna;Uszkodzony;Lift-back;Polska;1;-
+325;Automatyczna;Nowy;Pick-up;Rosja;0;-
+326;Manualna;Uszkodzony;Kabriolet;Rosja;0;-
+327;Automatyczna;Nowy;Kabriolet;Wielka Brytania;0;-
+328;Manualna;Uszkodzony;Lift-back;Polska;1;-
+329;Manualna;Uszkodzony;Kabriolet;Rosja;1;-
+330;Automatyczna;Używany;Pick-up;Niemcy;0;-
+331;Automatyczna;Uszkodzony;Kabriolet;Rosja;0;-
+332;Manualna;Nowy;Lift-back;Rosja;1;-
+333;Automatyczna;Używany;Kombi;Niemcy;1;-
+334;Automatyczna;Uszkodzony;Sedan;Niemcy;0;-
+335;Manualna;Używany;Kabriolet;Wielka Brytania;1;-
+336;Automatyczna;Używany;Pick-up;USA;0;-
+337;Manualna;Nowy;Sedan;Wielka Brytania;1;-
+338;Automatyczna;Używany;Hatch-back;Niemcy;1;-
+339;Manualna;Używany;Kabriolet;Rosja;1;-
+340;Automatyczna;Nowy;Kombi;Polska;0;-
+341;Manualna;Używany;Hatch-back;USA;0;-
+342;Manualna;Uszkodzony;Sedan;Rosja;1;-
+343;Manualna;Używany;Kabriolet;Polska;0;-
+344;Automatyczna;Uszkodzony;Lift-back;Polska;1;-
+345;Manualna;Uszkodzony;Kabriolet;Wielka Brytania;0;-
+346;Automatyczna;Nowy;Kombi;Niemcy;0;-
+347;Automatyczna;Uszkodzony;Pick-up;Polska;1;-
+348;Automatyczna;Nowy;Kombi;Rosja;1;-
+349;Manualna;Nowy;Kabriolet;Wielka Brytania;0;-
+350;Manualna;Nowy;Minivan;Niemcy;1;-
+351;Automatyczna;Używany;Kombi;Polska;1;-
+352;Manualna;Nowy;Kombi;USA;1;-
+353;Automatyczna;Uszkodzony;Kombi;Polska;0;-
+354;Manualna;Używany;Kombi;Wielka Brytania;1;-
+355;Manualna;Używany;Kombi;Rosja;0;-
+356;Manualna;Uszkodzony;Hatch-back;Polska;0;-
+357;Manualna;Używany;Sedan;USA;0;-
+358;Automatyczna;Nowy;Pick-up;USA;1;-
+359;Automatyczna;Nowy;Pick-up;Niemcy;1;-
+360;Automatyczna;Nowy;Kabriolet;Rosja;0;-
+361;Manualna;Używany;Minivan;Polska;0;-
+362;Manualna;Uszkodzony;Pick-up;USA;0;-
+363;Automatyczna;Uszkodzony;Lift-back;Niemcy;1;-
+364;Manualna;Używany;Minivan;Wielka Brytania;1;-
+365;Manualna;Nowy;Pick-up;Polska;1;-
+366;Manualna;Używany;Sedan;USA;1;-
+367;Manualna;Uszkodzony;Kabriolet;Rosja;0;-
+368;Automatyczna;Nowy;Hatch-back;Rosja;0;-
+369;Automatyczna;Nowy;Kabriolet;Polska;1;-
+370;Manualna;Nowy;Kombi;Rosja;1;-
+371;Manualna;Uszkodzony;Lift-back;USA;1;-
+372;Automatyczna;Nowy;Sedan;USA;1;-
+373;Automatyczna;Używany;Lift-back;Wielka Brytania;1;-
+374;Manualna;Uszkodzony;Lift-back;USA;0;-
+375;Manualna;Nowy;Lift-back;USA;0;-
+376;Manualna;Nowy;Minivan;Polska;1;-
+377;Automatyczna;Uszkodzony;Sedan;Polska;1;-
+378;Automatyczna;Uszkodzony;Lift-back;Niemcy;0;-
+379;Automatyczna;Używany;Kombi;Niemcy;1;-
+380;Automatyczna;Używany;Pick-up;Polska;1;-
+381;Automatyczna;Uszkodzony;Kombi;Wielka Brytania;0;-
+382;Automatyczna;Nowy;Lift-back;Polska;1;-
+383;Manualna;Uszkodzony;Hatch-back;Polska;0;-
+384;Manualna;Uszkodzony;Sedan;Wielka Brytania;1;-
+385;Automatyczna;Uszkodzony;Kabriolet;USA;0;-
+386;Automatyczna;Używany;Lift-back;Rosja;0;-
+387;Manualna;Używany;Kombi;Rosja;0;-
+388;Manualna;Nowy;Minivan;Polska;1;-
+389;Manualna;Nowy;Pick-up;Niemcy;0;-
+390;Manualna;Nowy;Kombi;Niemcy;1;-
+391;Automatyczna;Uszkodzony;Hatch-back;USA;0;-
+392;Manualna;Nowy;Sedan;Niemcy;0;-
+393;Automatyczna;Nowy;Kabriolet;Niemcy;0;-
+394;Automatyczna;Używany;Hatch-back;Polska;0;-
+395;Manualna;Nowy;Sedan;USA;0;-
+396;Manualna;Uszkodzony;Lift-back;USA;0;-
+397;Manualna;Uszkodzony;Pick-up;Wielka Brytania;0;-
+398;Automatyczna;Nowy;Minivan;Wielka Brytania;0;-
+399;Manualna;Używany;Minivan;Polska;1;-
+400;Manualna;Nowy;Minivan;Polska;1;-

@@ -1,0 +1,58 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Œr Cze 28 02:10:53 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   samochody.ctl
+Data File:      dane\samochody.csv
+  Bad File:     samochody.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table SAMOCHODY, loaded from every logical record.
+Insert option in effect for this table: REPLACE
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+SAMOCHOD_ID                         FIRST     *   ;       CHARACTER            
+MARKA                                NEXT     *   ;       CHARACTER            
+MODEL_AUTA                           NEXT     *   ;       CHARACTER            
+ROK_PRODUKCJI                        NEXT     *   ;       CHARACTER            
+VIN                                  NEXT     *   ;       CHARACTER            
+PRZEBIEG                             NEXT     *   ;       CHARACTER            
+MOC                                  NEXT     *   ;       CHARACTER            
+TYP_SILNIKA                          NEXT     *   ;       CHARACTER            
+POJEMNOSC                            NEXT     *   ;       CHARACTER            
+WYPOSAZENIE_ID                       NEXT     *   ;       CHARACTER            
+OPIS_ID                              NEXT     *   ;       CHARACTER            
+DODAJACY_PRAC_ID                     NEXT     *   ;       CHARACTER            
+
+
+Table SAMOCHODY:
+  400 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 198144 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:           400
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Œr Cze 28 02:10:53 2017
+Run ended on Œr Cze 28 02:10:53 2017
+
+Elapsed time was:     00:00:00.16
+CPU time was:         00:00:00.03

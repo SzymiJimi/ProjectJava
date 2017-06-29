@@ -1,0 +1,43 @@
+load data
+infile 'dane\wyposazenie.csv'
+into table wyposazenie
+replace
+fields terminated by ';' 
+( WYPOSAZENIE_ID char,
+PODUSZKI_POW char,
+ABS_ char,
+ESP char,
+WSP_KIER char,
+BLUETOOTH char,
+CZ_ZMIERZCH char,
+CZ_PARK char,
+CZ_DESZCZ char,
+EL_LUSTERKA char,
+EL_SZYBY_P char,
+EL_SZYBY_T char,
+PODGRZ_LUST_BOK char,
+PODGRZ_SIEDZ_P char,
+PODGRZ_SIEDZ_T char,
+PODGRZ_KIER char,
+IMMOBILIZER char,
+ALARM char,
+CENTRALNY_ZAM char,
+PILOT char,
+MP3 char,
+GN_AUX char,
+RADIO_FABR char,
+CD char,
+KOMP_POKLAD char,
+GNIAZDO_12V char,
+TEMPOMAT char,
+AKTYW_TEMPOMAT char,
+LINE_ASIST char,
+KURTYNY_POW char,
+ISOFIX char,
+CIEMN_SZYBY char,
+ALUFELGI char,
+RELINGI char,
+SW_LED char,
+SW_XENON char,
+SW_DZIEN char
+)
