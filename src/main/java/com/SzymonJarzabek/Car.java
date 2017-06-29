@@ -12,6 +12,7 @@ import java.util.Date;
 /**
  * Klasa zawierająca pola i metody pomagające w obsłudze samochodów w komisie
  */
+
 public class Car {
 
 

@@ -295,12 +295,11 @@ public class MouseHandler implements MouseListener {
         } catch (Exception e) {
             System.out.println("Błąd w pobieraniu ID samochodu...");
         }
-        System.out.println("Samochod id wynosi: " + row);
         JPanel mainPanel = new JPanel();
         mainPanel.setPreferredSize(new Dimension(1180, 600));
         mainPanel.setMaximumSize(new Dimension(1180, 600));
         mainPanel.setBounds(0, 0, 1180, 600);
-        JScrollPane modifyArea = Projekt.createTextArea(mainPanel, 1180, 580);
+        JScrollPane modifyArea = Projekt.createTextArea(mainPanel, 1180, 560);
         modifyArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         mainPanel.setLayout(new GridBagLayout());
         Equipment equips[] = new Equipment[35];
@@ -358,7 +357,7 @@ public class MouseHandler implements MouseListener {
         mainPanel.setPreferredSize(new Dimension(1180, 600));
         mainPanel.setMaximumSize(new Dimension(1180, 600));
         mainPanel.setBounds(0, 0, 1180, 600);
-        JScrollPane editorScrollPane = Projekt.createTextArea(mainPanel, 1180, 580);
+        JScrollPane editorScrollPane = Projekt.createTextArea(mainPanel, 1180, 560);
         editorScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         mainPanel.setLayout(new GridBagLayout());
         GridBagConstraints layout = new GridBagConstraints();

@@ -55,7 +55,12 @@ public class Table {
     public Table(String name) throws Exception {
 
         tableName = name;
-        rowCount = rowCount + name;
+        if(name=="PRACOWNICY")
+        {
+            rowCount = rowCount + name+" WHERE ZATRUDNIONY=1";
+        }else {
+            rowCount = rowCount + name;
+        }
         colCount = colCount + name + "'";
         sqlColNames = sqlColNames + name + "'";
         getCount(name);
@@ -216,6 +221,7 @@ public class Table {
         ResultSet result = statement.executeQuery(rowCount);
         while (result.next()) {
             qRows = result.getInt("rowcount");
+
         }
     }
 

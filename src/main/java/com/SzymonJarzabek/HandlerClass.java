@@ -234,10 +234,10 @@ public class HandlerClass implements ActionListener {
      */
     private void createAddCarPanel(JComponent panel, int row_id) {
         JPanel mainPanel = new JPanel();
-        mainPanel.setPreferredSize(new Dimension(1180, 600));
+        mainPanel.setPreferredSize(new Dimension(1180, 680));
         mainPanel.setMaximumSize(new Dimension(1180, 600));
-        mainPanel.setBounds(0, 0, 1180, 600);
-        JScrollPane modifyArea = Projekt.createTextArea(mainPanel, 1180, 580);
+        mainPanel.setBounds(0, 0, 1200, 580);
+        JScrollPane modifyArea = Projekt.createTextArea(mainPanel, 1180, 560);
         modifyArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         mainPanel.setLayout(new GridBagLayout());
         GridBagConstraints layout = new GridBagConstraints();
@@ -406,6 +406,16 @@ public class HandlerClass implements ActionListener {
 
             int data = Integer.parseInt(salary.price.getText());
             Person.changeSalary(data, rowAdd);
+            JOptionPane.showMessageDialog(null, "Zmieniono wynagrodzenie!", "Powodzenie!", JOptionPane.INFORMATION_MESSAGE);
+            String name = "Nowe wynagrodzenie";
+            int index;
+            index = Projekt.tabbedPanel.indexOfTab(name);
+            if (index >= 0) {
+                Projekt.tabbedPanel.removeTabAt(index);
+                Shelf.i--;
+            }
+
+            Person.backToStart();
         } else if (event.getActionCommand().equals("backToStart")) {
 
             Person.backToStart();

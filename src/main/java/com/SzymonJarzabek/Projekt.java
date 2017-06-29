@@ -31,7 +31,7 @@ public class Projekt {
     public static JTable createTable(String name, JComponent panel) throws Exception {
         panel.updateUI();
         Table Item = new Table(name);
-        JScrollPane tableArea = Projekt.createTextArea(Item.table, 1180, 580);
+        JScrollPane tableArea = Projekt.createTextArea(Item.table, 1180, 560);
         panel.add(tableArea);
         panel.updateUI();
         return Item.table;
@@ -234,20 +234,21 @@ public class Projekt {
         textPaneMod.setText("Czesc sdfs\naaaa\naa\naa\naaa\naa\na\na\naaa\naa\na\na\na\naaa\naaa\naaaa\naaa\naas\ndfs\nfsdfsdf\n");
         JTextPane textPaneEvt = new JTextPane();
         textPaneEvt.setEditable(false);
-        JScrollPane modifyArea = createTextArea(textPaneMod, 450, 300);
-        JScrollPane eventsArea = createTextArea(textPaneEvt, 450, 200);
+        JScrollPane modifyArea = createTextArea(textPaneMod, 450, 200);
+        JScrollPane eventsArea = createTextArea(textPaneEvt, 450, 100);
 
-        setLayoutAdd(mainPanel, layout, 0, 0, -20, -200, 0, 20, chooseOptn);
-        setLayoutAdd(mainPanel, layout, 0, 1, -300, -200, 0, -150, butPrac);
-        setLayoutAdd(mainPanel, layout, 0, 2, -440, -200, 0, -150, butAdd);
-        setLayoutAdd(mainPanel, layout, 0, 3, -480, -200, 0, -150, butStan);
-        setLayoutAdd(mainPanel, layout, 0, 4, -480, -200, 0, -150, butSprzed);
-        setLayoutAdd(mainPanel, layout, 0, 5, -280, -200, 0, -150, butKli);
-        setLayoutAdd(mainPanel, layout, 0, 6, -50, -200, 20, -150, butGraf);
-        setLayoutAdd(mainPanel, layout, 1, 0, 100, 400, 0, -200, lastMod);
-        setLayoutAdd(mainPanel, layout, 1, 1, 0, 400, 0, -200, modifyArea);
-        setLayoutAdd(mainPanel, layout, 1, 2, 30, 400, 0, -200, upcomingEvt);
-        setLayoutAdd(mainPanel, layout, 1, 3, 0, 400, 0, -200, eventsArea);
+
+        setLayoutAdd(mainPanel, layout, 0, 0, 30, -200, 0, 20, chooseOptn);
+        setLayoutAdd(mainPanel, layout, 0, 1, 65, -200, 0, -150, butPrac);
+        setLayoutAdd(mainPanel, layout, 0, 2, 65, -200, 0, -150, butAdd);
+        setLayoutAdd(mainPanel, layout, 0, 3, 65, -200, 0, -150, butStan);
+        setLayoutAdd(mainPanel, layout, 0, 4, 65, -200, 0, -150, butSprzed);
+        setLayoutAdd(mainPanel, layout, 0, 5, 65, -200, 100, -150, butKli);
+       // setLayoutAdd(mainPanel, layout, 0, 6, -50, -200, 20, -150, butGraf);
+        //setLayoutAdd(mainPanel, layout, 1, 0, 50, 400, 0, -200, lastMod);
+        //setLayoutAdd(mainPanel, layout, 1, 1, -100, 400, 0, -200, modifyArea);
+       // setLayoutAdd(mainPanel, layout, 1, 2, 30, 400, 0, -200, upcomingEvt);
+       // setLayoutAdd(mainPanel, layout, 1, 3, 100, 400, 0, -200, eventsArea);
 
         butPrac.setActionCommand("Workers");
         HandlerClass handlerWork = new HandlerClass(textPaneEvt);
